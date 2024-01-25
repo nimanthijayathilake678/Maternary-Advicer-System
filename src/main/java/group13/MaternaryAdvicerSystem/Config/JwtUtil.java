@@ -12,7 +12,7 @@ import java.util.function.Function;
 
 @Component
 public class JwtUtil {
-    private final static String SECRETE_KEY = "Ward_Management_System_@_Matara";
+    private final static String SECRETE_KEY = "Maternary-Adivicer-System@mathara";
     private static final int TOKEN_VALIDITY = 3600 * 5;
 
     public String getUsernameFromTaken(String token){
