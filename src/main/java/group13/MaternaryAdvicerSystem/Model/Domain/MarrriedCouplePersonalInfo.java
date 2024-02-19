@@ -16,25 +16,20 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "M_Couple_General_Info")
-public class M_Couple_General_Info {
-    @Column(nullable = false)
-    private String Div_Reg_Min_H_Service;
-    @Column(nullable = false)
-    private String MOHArea;
-    @Column(nullable = false)
-    private String PHMArea;
-    @Column(nullable = false)
+@Table(name = "MarrriedCouplePersonalInfo")
+public class MarrriedCouplePersonalInfo {
     @Id
     private String EligibleRegNo;
     @Column(nullable = false)
-    private String HusbandName ;
+    private String Gender;
     @Column(nullable = false)
-    private String Address;
+    private String DOB;
     @Column(nullable = false)
-    private String Email;
+    private Date EducationalLevel;
     @Column(nullable = false)
-    private Integer TelephoneNo;
+    private String Occupation;
+    @Column(nullable = false)
+    private String MarriedDate;
 
 
 }
