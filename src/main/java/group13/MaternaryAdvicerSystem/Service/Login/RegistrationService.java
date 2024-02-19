@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
-
 public class RegistrationService {
 
     @Autowired
@@ -32,16 +32,56 @@ public class RegistrationService {
         userRepository.save(user);
     }
     public void initUser(){
-        User user = new User();
-        user.setFullName("M M T N Jayathilake");
-        user.setFirstName("Nimanthi");
-        user.setLastName("Jayathilake");
-        user.setPosition(UserRole.MOH);
-        user.setNic("995922088");
-        user.setUsername("Nimanthi123");
-        user.setPassword(getEncodedPassword("Nimanthi@123"));
+//        User user1 = new User();
+//        user1.setFullName("G Gunathilake");
+//        user1.setFirstName("Gayani");
+//        user1.setLastName("Gunathilake");
+//        user1.setPosition(UserRole.Family);
+//        user1.setNic("955922088");
+//        user1.setUsername("Family123");
+//        user1.setPassword(getEncodedPassword("Family@123"));
+//
+//        userRepository.save(user1);
+        List<User> users = new ArrayList<>();
 
-        userRepository.save(user);
+        //Add MOH
+
+
+        //Add Family
+        User family=new User();
+        family.setFirstName("Family name");
+        family.setFullName("Family fullname");
+        family.setLastName("Family lastname");
+        family.setPosition(UserRole.Family);
+        family.setNic("999574383");
+        family.setUsername("Family123");
+        family.setPassword(getEncodedPassword("Family@123"));
+        users.add(family);
+
+        //Add VOGDR
+        User vogDr=new User();
+        vogDr.setFirstName("Vogdr name");
+        vogDr.setFullName("Vogdr fullname");
+        vogDr.setLastName("Vogdr lastname");
+        vogDr.setPosition(UserRole.VogDoctor);
+        vogDr.setNic("283849494");
+        vogDr.setUsername("Vog123");
+        vogDr.setPassword(getEncodedPassword("Vog@123"));
+        users.add(vogDr);
+
+        User moh=new User();
+        moh.setFirstName("MOH name");
+        moh.setFullName("MOH fullname");
+        moh.setLastName("MOH lastname");
+        moh.setPosition(UserRole.MOH);
+        moh.setNic("283849494");
+        moh.setUsername("Moh123");
+        moh.setPassword(getEncodedPassword("Moh@123"));
+        users.add(moh);
+
+        // Save all users to the database
+        userRepository.saveAll(users);
+
 
     }
     public List<User> getAllUsers() {
