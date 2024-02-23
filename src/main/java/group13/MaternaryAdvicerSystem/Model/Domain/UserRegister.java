@@ -34,7 +34,7 @@ public class UserRegister {
     @Column(nullable = false)
     private String marriedStatus;
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
+
     private String occupation;
     @Column(nullable = false)
     private String area;
