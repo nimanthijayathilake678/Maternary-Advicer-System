@@ -16,25 +16,29 @@ import java.util.Date;
 @NoArgsConstructor
 public class B_Basic_Info {
     @Id
-    private  String B_Reg_Num;
+    @Column(nullable = false)
+    private String B_Reg_Num;
+
+    @Column(nullable = false)
+    private LocalDate B_Reg_Date;
+
     @Column(nullable = false)
     private String B_MOH_Division;
+
     @Column(nullable = false)
     private String B_FSHO_Division;
+
     @ManyToOne
-    @JoinColumn(name = "eligible_reg_num", referencedColumnName = "eligible_reg_num")
-    private C_Basic_Info couple;
+    @JoinColumn(name = "couple_id", referencedColumnName = "C_Reg_Num")
+    private C_Basic_Info couple_id;
+
     @ManyToOne
-    @JoinColumn(name = "p_reg_num", referencedColumnName = "p_reg_num")
-    private P_Basic_Info pregnancy;
-    @Column(nullable = false)
-    private Date B_Reg_Date;
+    @JoinColumn(name = "pregnancy_id", referencedColumnName = "P_Reg_Num")
+    private P_Basic_Info pregnancy_id;
+
     @Column(nullable = false)
     private String B_Name;
+
     @Column(nullable = false)
     private int B_Mother_Age;
-
-
-
-
 }

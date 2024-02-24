@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -13,11 +13,13 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class B_Immunization {
+public class B_Immunization implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long Id;
     @OneToOne
     @JoinColumn(name="babynum",referencedColumnName = "B_Reg_Num")
-    private  B_Basic_Info babynum;
+    private  B_Basic_Info babyNum;
     @Column(nullable = false)
     private String B_Immunization_Name;
     @Column(nullable = false)
