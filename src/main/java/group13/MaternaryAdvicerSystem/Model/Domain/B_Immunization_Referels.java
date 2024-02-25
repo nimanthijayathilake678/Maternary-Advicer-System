@@ -15,9 +15,11 @@ import java.util.Date;
 @NoArgsConstructor
 public class B_Immunization_Referels {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long Id;
     @OneToOne
     @JoinColumn(name="babynum",referencedColumnName = "B_Reg_Num")
-    private  B_Basic_Info babynum;
+    private  B_Basic_Info babyNum;
     @Column(nullable = false)
     private String B_Immunization_Name;
     @Column(nullable = false)
