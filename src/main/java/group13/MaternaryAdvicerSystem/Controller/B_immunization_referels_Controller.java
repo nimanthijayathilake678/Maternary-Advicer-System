@@ -20,4 +20,5 @@ public class B_immunization_referels_Controller {
         b_immunization_service_referels_impl.saveBabyImmuneReferels(babyImmuneReferels);
         return "New baby refferel  is added";
     }
+
 }
