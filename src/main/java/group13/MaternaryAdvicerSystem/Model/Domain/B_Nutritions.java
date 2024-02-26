@@ -15,14 +15,16 @@ import java.util.Date;
 @NoArgsConstructor
 public class B_Nutritions {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long Id;
     @OneToOne
     @JoinColumn(name="babynum",referencedColumnName = "B_Reg_Num")
-    private  B_Basic_Info babynum;
+    private  B_Basic_Info babyNum;
     @Column(nullable = false)
     private Date B_Nutrient_Date;
     private String B_Nutrient_Batch_No;
     @Column(nullable = false)
     private int B_Age_For_Nutrient_Date;
     @Column(nullable = false)
-    private int B_Nutrient_Name;
+    private String B_Nutrient_Name;
 }
