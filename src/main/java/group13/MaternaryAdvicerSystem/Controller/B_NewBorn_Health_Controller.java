@@ -1,6 +1,7 @@
 package group13.MaternaryAdvicerSystem.Controller;
 
 
+import group13.MaternaryAdvicerSystem.Model.Dto.Save_Immunization_Referels_Dto;
 import group13.MaternaryAdvicerSystem.Model.Dto.Save_NewBorn_Helath_Dto;
 
 import group13.MaternaryAdvicerSystem.Service.Login.B_NewBorn_Health_Service_Impl;
@@ -20,5 +21,10 @@ public class B_NewBorn_Health_Controller {
 
         b_newBorn_health_service_impl.saveNewBornHealth(newBornHealth);
         return "newborn helath record  is added";
+    }
+
+    @GetMapping("/getbabyHealth/{babyNum}")
+    public List<Save_NewBorn_Helath_Dto> getNewBornHealth(@PathVariable String babyNum){
+        return b_newBorn_health_service_impl.getNewBornHealth(babyNum);
     }
 }

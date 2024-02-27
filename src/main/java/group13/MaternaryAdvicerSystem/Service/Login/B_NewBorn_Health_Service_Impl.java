@@ -42,6 +42,30 @@ public class B_NewBorn_Health_Service_Impl implements B_NewBorn_Health_Service{
        newBorn_health_repository.save(b_newBorn_health);
     }
     public List<Save_NewBorn_Helath_Dto> getNewBornHealth(String babyNum){
-        return null;
+        Optional<B_Basic_Info> b_basic_info=b_basic_info_repository.findById(babyNum);
+        List<B_NewBorn_Health> b_newBorn_health=null;
+        List<Save_NewBorn_Helath_Dto> saveNewBornHelathDtos=new ArrayList<>();
+        if(b_basic_info.isPresent()){
+            b_newBorn_health = newBorn_health_repository.findByBabyNum(b_basic_info.get());
+        }
+
+        assert b_newBorn_health !=null;
+        for(B_NewBorn_Health newBornHealth:b_newBorn_health){
+
+            Save_NewBorn_Helath_Dto saveNewBornHelathDto=new Save_NewBorn_Helath_Dto();
+            saveNewBornHelathDto.setBabyNum(newBornHealth.getBabyNum().getB_Reg_Num());
+            saveNewBornHelathDto.setB_Temperature(newBornHealth.getB_Temperature());
+            saveNewBornHelathDto.setB_Nature_Pecan(newBornHealth.getB_Nature_Pecan());
+            saveNewBornHelathDto.setB_Feces_Color(newBornHealth.getB_Feces_Color());
+            saveNewBornHelathDto.setB_Examine_Date(newBornHealth.getB_Examine_Date());
+            saveNewBornHelathDto.setB_Breast_Feeding(newBornHealth.getB_Breast_Feeding());
+            saveNewBornHelathDto.setB_SkinColor(newBornHealth.getB_SkinColor());
+            saveNewBornHelathDtos.add(saveNewBornHelathDto);
+
+        }
+
+
+        return saveNewBornHelathDtos ;
+
     }
 }
