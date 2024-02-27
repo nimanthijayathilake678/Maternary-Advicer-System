@@ -39,7 +39,28 @@ public class B_Immunization_Referels_Service_Impl implements B_Immunization_Refe
 
 
     }
+    @Override
     public List<Save_Immunization_Referels_Dto> getBabyImmuneReferels(String babyNum){
-        return null;
+        Optional<B_Basic_Info> b_basic_info=b_basic_info_repository.findById(babyNum);
+        List<B_Immunization_Referels> b_immunization_referels=null;
+        List<Save_Immunization_Referels_Dto> saveImmunizationReferelsDtos=new ArrayList<>();
+        if(b_basic_info.isPresent()){
+            b_immunization_referels = b_immunization_referels_repository.findByBabyNum(b_basic_info.get());
+        }
+
+        assert b_immunization_referels !=null;
+            for(B_Immunization_Referels immunizationReferels:b_immunization_referels){
+                Save_Immunization_Referels_Dto saveImmunizationReferelsDto1=new Save_Immunization_Referels_Dto();
+
+                saveImmunizationReferelsDto1.setBabyNum(immunizationReferels.getBabyNum().getB_Reg_Num());
+                saveImmunizationReferelsDto1.setB_Referel_Place(immunizationReferels.getB_Referel_Place());
+                saveImmunizationReferelsDto1.setB_Referel_Reason(immunizationReferels.getB_Referel_Reason());
+                saveImmunizationReferelsDto1.setB_Immunization_Name(immunizationReferels.getB_Immunization_Name());
+
+                saveImmunizationReferelsDtos.add(saveImmunizationReferelsDto1);
+            }
+
+
+            return saveImmunizationReferelsDtos;
     }
 }
