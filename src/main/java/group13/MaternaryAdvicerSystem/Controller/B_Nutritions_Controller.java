@@ -22,8 +22,8 @@ public class B_Nutritions_Controller {
 
         return "newborn nutritions record  is added";
     }
-//    @PostMapping("/addnutrients")
-//    public Save_BabyNutrients_Dto add(@RequestBody Save_BabyNutrients_Dto saveBabyNutrientsDto){
-//        return saveBabyNutrientsDto;
-//    }
+    @GetMapping("/getbabyNutrients/{babyNum}")
+    public List<Save_BabyNutrients_Dto> getBabyNutritions(@PathVariable String babyNum){
+        return b_nutritions_service_impl.getBabyNutritions(babyNum);
+    }
 }

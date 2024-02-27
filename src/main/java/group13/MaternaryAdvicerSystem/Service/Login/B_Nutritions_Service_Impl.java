@@ -42,6 +42,26 @@ public class B_Nutritions_Service_Impl implements B_Nutritions_Service{
     }
     @Override
     public List<Save_BabyNutrients_Dto> getBabyNutritions(String babyNum){
-        return null;
+
+        Optional<B_Basic_Info> b_basic_info=b_basic_info_repository.findById(babyNum);
+        List<B_Nutritions> b_nutritions=null;
+        List<Save_BabyNutrients_Dto> saveBabyNutrientsDtos=new ArrayList<>();
+
+        if(b_basic_info.isPresent()){
+            b_nutritions= b_nutritions_repository.findByBabyNum(b_basic_info.get());
+        }
+
+        assert b_nutritions !=null;
+        for(B_Nutritions nutritions:b_nutritions){
+
+            Save_BabyNutrients_Dto saveBabyNutrientsDto=new Save_BabyNutrients_Dto();
+            saveBabyNutrientsDto.setBabynum(nutritions.getBabyNum().getB_Reg_Num());
+            saveBabyNutrientsDto.setB_Age_For_Nutrient_Date(nutritions.getB_Age_For_Nutrient_Date());
+            saveBabyNutrientsDto.setB_Nutrient_Name(nutritions.getB_Nutrient_Name());
+            saveBabyNutrientsDto.setB_Nutrient_Date(nutritions.getB_Nutrient_Date());
+            saveBabyNutrientsDto.setB_Nutrient_Batch_No(nutritions.getB_Nutrient_Batch_No());
+            saveBabyNutrientsDtos.add(saveBabyNutrientsDto);
+        }
+        return saveBabyNutrientsDtos;
     }
 }
