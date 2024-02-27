@@ -23,13 +23,12 @@ public class B_Special_Care {
     @Column(nullable = false)
     private boolean B_LowBirth_Weight;
     @Column(nullable = false)
-    private boolean B_Inheruted_Diseases;
+    private boolean B_Inherited_Diseases;
     @Column(nullable = false)
     private boolean B_Mother_Unstability;
     @Column(nullable = false)
     private boolean B_Development_Delays;
-    @Column(nullable = false)
-    private boolean B_Parent_Death;
+
 
 
 }

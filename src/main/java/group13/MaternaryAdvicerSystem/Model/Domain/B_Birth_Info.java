@@ -30,22 +30,11 @@ public class B_Birth_Info {
     @Column(nullable = false)
     private float B_Birth_Lenght;
     @Column(nullable = false)
-    private float B_Appgar_1min;
-    @Column(nullable = false)
-    private float B_Appgar_5min;
-    @Column(nullable = false)
-    private float B_Appgar_10min;
-    @Column(nullable = false)
-    private boolean B_VitaminK;
-    @Column(nullable = false)
-    private boolean B_Thyroid;
-    @Column(nullable = false)
-    private boolean B_BreastFeeding;
+    private boolean B_Breastfeed_Firsthour;
     @Column(nullable = false)
     private boolean B_BreastConnection;
     @Column(nullable = false)
     private boolean B_BreastEstablished;
 
-    private String B_Birth_Test;
 
 }

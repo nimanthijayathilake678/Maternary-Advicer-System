@@ -1,24 +1,18 @@
-package group13.MaternaryAdvicerSystem.Model.Domain;
-
-import jakarta.persistence.*;
+package group13.MaternaryAdvicerSystem.Model.Dto;
+import group13.MaternaryAdvicerSystem.Model.Domain.B_Basic_Info;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+import java.util.Date;
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class B_NeonatalExam {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
-    @OneToOne
-    @JoinColumn(name="babynum",referencedColumnName = "B_Reg_Num")
-    private  B_Basic_Info babyNum;
-    @Column(nullable = false)
+@AllArgsConstructor
+public class Save_Neonatal_Dto {
+    private String babynum;
     private boolean B_FemoralPulse;
     private boolean B_RespiratoryRate;
     private boolean B_Grunting;
@@ -31,5 +25,4 @@ public class B_NeonatalExam {
     private boolean B_Capillery_Filling;
     private boolean B_Pulse_Rate;
     private boolean B_HeartMurmers;
-
 }
