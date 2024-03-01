@@ -12,8 +12,6 @@ import java.util.Date;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "userregister")
 public class UserRegister {
@@ -42,7 +40,6 @@ public class UserRegister {
     private String username;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
-    private String confirmpassword;
-    
+
+
 }
