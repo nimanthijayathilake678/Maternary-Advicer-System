@@ -17,8 +17,8 @@ public class UserRegisterController {
     private UserRegisterRepository userRegisterRepository;
 
     @PostMapping("/registerUser")
-    UserRegister newUser(@RequestBody UserRegister newUser){
-        return userRegisterRepository.save(newUser);
+    UserRegister newUserRegister(@RequestBody UserRegister newUserRegister){
+        return userRegisterRepository.save(newUserRegister);
     }
 
     @GetMapping("/viewUsers")
