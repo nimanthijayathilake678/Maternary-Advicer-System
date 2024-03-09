@@ -3,15 +3,15 @@ package group13.MaternaryAdvicerSystem.Model.Domain;
 import group13.MaternaryAdvicerSystem.Model.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "userregister")
 public class UserRegister {
@@ -32,7 +32,6 @@ public class UserRegister {
     @Column(nullable = false)
     private String marriedStatus;
     @Column(nullable = false)
-
     private String occupation;
     @Column(nullable = false)
     private String area;
