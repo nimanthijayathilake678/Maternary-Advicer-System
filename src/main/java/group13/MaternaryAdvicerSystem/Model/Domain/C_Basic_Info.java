@@ -20,6 +20,7 @@ public class C_Basic_Info {
     @Column(nullable = false)
     private LocalDate C_Reg_Date;
 
+    @Column(nullable = false)
     private String C_MOH_Division;
 
     @Column(nullable = false)
@@ -39,6 +40,9 @@ public class C_Basic_Info {
 
     @Column(nullable = true)
     private String C_Telephone;
+
+    @Column(nullable = false)
+    private String  C_PHM_Division;
 
     @OneToMany(mappedBy = "couple_id", cascade = CascadeType.ALL)
     private List<P_Basic_Info> pregnancies;
