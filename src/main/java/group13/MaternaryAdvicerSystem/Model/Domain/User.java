@@ -34,6 +34,7 @@ public class User {
     @Column(nullable = false)
     @Size(min = 8, max = 20)
     private String password;
+    @Column(nullable = false, length = 20)
     @Enumerated(EnumType.STRING)
     private UserRole Position;
 }
