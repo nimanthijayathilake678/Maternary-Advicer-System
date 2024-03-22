@@ -9,5 +9,7 @@ import java.util.Optional;
 public interface B_Basic_Info_Service {
     public void savebaby(B_Basic_Info_Dto baby);
     public List<B_Basic_Info_Dto> getBabyDetails(String babyNum);
-
+    public List<B_Basic_Info_Dto> getBabyDetailsVog();
+    public List<B_Basic_Info_Dto> getBabyDetailsByCoupleNum(String coupleNum);
+    public List<B_Basic_Info_Dto>  getBabyDetailsByFsho(String fshoname);
 }
