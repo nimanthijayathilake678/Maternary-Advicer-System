@@ -14,8 +14,12 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/newbaby")
 public class B_Basic_Info_Controller {
+
+    private final B_Basic_Info_Service b_basic_info_service;
     @Autowired
-    private B_Basic_Info_Service b_basic_info_service;
+    public B_Basic_Info_Controller(B_Basic_Info_Service b_basic_info_service){
+        this.b_basic_info_service = b_basic_info_service;
+    }
 
     @PostMapping("/add")
     public String add(@RequestBody B_Basic_Info_Dto baby){
@@ -28,5 +32,18 @@ public class B_Basic_Info_Controller {
     public List<B_Basic_Info_Dto> getBabyDetails(@PathVariable String babyNum){
         return b_basic_info_service.getBabyDetails(babyNum);
     }
+    @GetMapping("/getbabyInfo")
+    public List<B_Basic_Info_Dto> getBabyDetails(){
+        return b_basic_info_service.getBabyDetailsVog();
+    }
 
+    @GetMapping("/getbabyInfoByCoupleNum/{coupleNum}")
+    public List<B_Basic_Info_Dto> getBabyDetailsByCoupleNum (@PathVariable String coupleNum){
+        return b_basic_info_service.getBabyDetailsByCoupleNum(coupleNum);
+    }
+
+    @GetMapping("/getbabyInfoByFsho/{fshoname}")
+    public List<B_Basic_Info_Dto> getBabyDetailsByFsho(@PathVariable String fshoname){
+        return b_basic_info_service.getBabyDetailsByFsho(fshoname);
+    }
 }

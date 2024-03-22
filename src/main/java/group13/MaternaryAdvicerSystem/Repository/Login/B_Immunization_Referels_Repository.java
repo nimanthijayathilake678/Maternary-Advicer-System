@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface B_Immunization_Referels_Repository extends JpaRepository<B_Immunization_Referels,Long> {
+public interface   B_Immunization_Referels_Repository extends JpaRepository<B_Immunization_Referels,Long> {
     List<B_Immunization_Referels> findByBabyNum(B_Basic_Info b_basic_info);
 }
