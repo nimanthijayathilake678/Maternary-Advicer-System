@@ -12,6 +12,8 @@ import org.hibernate.annotations.CollectionId;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
+import java.util.Date;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -28,6 +30,16 @@ public class User {
     private String firstName;
     @Column(nullable = false)
     private String lastName;
+    @Column(nullable = false)
+    private String contactNo;
+    @Column(nullable = false)
+    private String email;
+    @Column(nullable = false)
+    private String gender;
+    @Column(nullable = false)
+    private String marriedStatus;
+    @Column(nullable = false)
+    private String area;
     @Column(nullable = false)
     @Size(min = 5, max = 30)
     private String username;

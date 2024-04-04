@@ -32,13 +32,13 @@ public class UserRegister {
     @Column(nullable = false)
     private String marriedStatus;
     @Column(nullable = false)
-    private String occupation;
-    @Column(nullable = false)
     private String area;
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
+    @Size(min = 8, max = 20)
     private String password;
-
+    @Enumerated(EnumType.STRING)
+    private UserRole Position;
 
 }
