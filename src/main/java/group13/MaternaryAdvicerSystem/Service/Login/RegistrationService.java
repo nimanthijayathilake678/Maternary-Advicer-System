@@ -48,27 +48,33 @@ public class RegistrationService {
 
 
         //Add Family
-//        User family=new User();
-//        family.setFirstName("Family name");
-//        family.setFullName("Family fullname");
-//        family.setLastName("Family lastname");
-//        family.setPosition(UserRole.Family);
-//        family.setNic("999574383");
-//        family.setUsername("Family123");
-//        family.setPassword(getEncodedPassword("Family@123"));
-//        users.add(family);
+        User family=new User();
+        family.setFirstName("Family name");
+        family.setFullName("Family fullname");
+        family.setLastName("Family lastname");
+        family.setPosition(UserRole.Family);
+        family.setNic("999574383");
+        family.setUsername("Family123");
+        family.setPassword(getEncodedPassword("Family@123"));
+        family.setArea("Mathara");
+        family.setEmail("fam@gmail.com");
+        family.setGender("Famale");
+        family.setContactNo("0138393922");
+        family.setMarriedStatus("yes");
+        users.add(family);
 
         //Add VOGDR
-        User vogDr=new User();
-        vogDr.setFirstName("Vogdr name");
-        vogDr.setFullName("Vogdr fullname");
-        vogDr.setLastName("Vogdr lastname");
-        vogDr.setPosition(UserRole.VogDoctor);
-        vogDr.setNic("283849494");
-        vogDr.setUsername("Vog123");
-        vogDr.setPassword(getEncodedPassword("Vog@123"));
-        users.add(vogDr);
-
+//        User vogDr=new User();
+//        vogDr.setFirstName("Vogdr name");
+//        vogDr.setFullName("Vogdr fullname");
+//        vogDr.setLastName("Vogdr lastname");
+//        vogDr.setPosition(UserRole.VogDoctor);
+//        vogDr.setNic("283849494");
+//        vogDr.setUsername("Vog123");
+//        vogDr.setPassword(getEncodedPassword("Vog@123"));
+//        vogDr.setArea("Mathara");
+//        users.add(vogDr);
+//
 //        User moh=new User();
 //        moh.setFirstName("MOH name");
 //        moh.setFullName("MOH fullname");
@@ -77,6 +83,7 @@ public class RegistrationService {
 //        moh.setNic("283849494");
 //        moh.setUsername("Moh123");
 //        moh.setPassword(getEncodedPassword("Moh@123"));
+//        moh.setArea("Mathara");
 //        users.add(moh);
 
         // Save all users to the database

@@ -1,6 +1,7 @@
 package group13.MaternaryAdvicerSystem.Model.Dto;
 
 
+import group13.MaternaryAdvicerSystem.Model.UserRole;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class UserRegisterDTO {
     private String email;
     private String gender;
     private String marriedStatus;
-    private String occupation;
+    private UserRole position;
     private String area;
     private String username;
     private String password;
