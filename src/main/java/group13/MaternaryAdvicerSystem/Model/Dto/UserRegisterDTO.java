@@ -1,6 +1,8 @@
 package group13.MaternaryAdvicerSystem.Model.Dto;
 
 
+import group13.MaternaryAdvicerSystem.Model.UserRole;
+import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,16 +14,16 @@ import java.util.Date;
 @AllArgsConstructor
 @Data
 public class UserRegisterDTO {
-    @Id
-    private String id;
-    private String fullName;
+    private Long id;
     private String nicNo;
-    private Date birthday;
+    private String fullName;
+    private String firstName;
+    private String lastName;
     private String contactNo;
     private String email;
     private String gender;
     private String marriedStatus;
-    private String occupation;
+    private UserRole position;
     private String area;
     private String username;
     private String password;

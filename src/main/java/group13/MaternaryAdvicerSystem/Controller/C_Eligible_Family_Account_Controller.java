@@ -5,7 +5,7 @@ import group13.MaternaryAdvicerSystem.Model.Domain.C_Eligible_Family_Account;
 import group13.MaternaryAdvicerSystem.Model.Dto.UserRegisterDTO;
 import group13.MaternaryAdvicerSystem.Service.Login.B_Basic_Info_Service;
 import group13.MaternaryAdvicerSystem.Service.Login.C_Eligible_Family_Account_Service;
-import group13.MaternaryAdvicerSystem.Service.Login.UserRegisterService;
+import group13.MaternaryAdvicerSystem.Service.Login.U_Basic_Info_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
