@@ -48,15 +48,15 @@ public class RegistrationService {
 
 
         //Add Family
-//        User family=new User();
-//        family.setFirstName("Family name");
-//        family.setFullName("Family fullname");
-//        family.setLastName("Family lastname");
-//        family.setPosition(UserRole.Family);
-//        family.setNic("999574383");
-//        family.setUsername("Family123");
-//        family.setPassword(getEncodedPassword("Family@123"));
-//        users.add(family);
+        User family=new User();
+        family.setFirstName("Family name");
+        family.setFullName("Family fullname");
+        family.setLastName("Family lastname");
+        family.setPosition(UserRole.Family);
+        family.setNic("999574383");
+        family.setUsername("Family123");
+        family.setPassword(getEncodedPassword("Family@123"));
+        users.add(family);
 
         //Add VOGDR
         User vogDr=new User();
