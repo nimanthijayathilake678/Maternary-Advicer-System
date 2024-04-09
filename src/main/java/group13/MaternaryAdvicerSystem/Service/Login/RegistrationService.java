@@ -28,27 +28,20 @@ public class RegistrationService {
         user.setNic(userdto.getNic());
         user.setPassword(getEncodedPassword(userdto.getPassword()));
         user.setPosition(userdto.getPosition());
-
+        user.setId(userdto.getId());
+        user.setEmail(userdto.getEmail());
+        user.setArea(userdto.getArea());
+        user.setGender(user.getGender());
+        user.setMarriedStatus(userdto.getMarriedStatus());
+        user.setContactNo(userdto.getContactNo());
         userRepository.save(user);
     }
     public void initUser(){
-//        User user1 = new User();
-//        user1.setFullName("G Gunathilake");
-//        user1.setFirstName("Gayani");
-//        user1.setLastName("Gunathilake");
-//        user1.setPosition(UserRole.Family);
-//        user1.setNic("955922088");
-//        user1.setUsername("Family123");
-//        user1.setPassword(getEncodedPassword("Family@123"));
-//
-//        userRepository.save(user1);
+
         List<User> users = new ArrayList<>();
-
-        //Add MOH
-
-
         //Add Family
         User family=new User();
+        family.setId(92020202020L);
         family.setFirstName("Family name");
         family.setFullName("Family fullname");
         family.setLastName("Family lastname");
@@ -63,28 +56,39 @@ public class RegistrationService {
         family.setMarriedStatus("yes");
         users.add(family);
 
-        //Add VOGDR
-//        User vogDr=new User();
-//        vogDr.setFirstName("Vogdr name");
-//        vogDr.setFullName("Vogdr fullname");
-//        vogDr.setLastName("Vogdr lastname");
-//        vogDr.setPosition(UserRole.VogDoctor);
-//        vogDr.setNic("283849494");
-//        vogDr.setUsername("Vog123");
-//        vogDr.setPassword(getEncodedPassword("Vog@123"));
-//        vogDr.setArea("Mathara");
-//        users.add(vogDr);
-//
-//        User moh=new User();
-//        moh.setFirstName("MOH name");
-//        moh.setFullName("MOH fullname");
-//        moh.setLastName("MOH lastname");
-//        moh.setPosition(UserRole.MOH);
-//        moh.setNic("283849494");
-//        moh.setUsername("Moh123");
-//        moh.setPassword(getEncodedPassword("Moh@123"));
-//        moh.setArea("Mathara");
-//        users.add(moh);
+        //Add Moh
+        User moh=new User();
+        moh.setId(92020202020L);
+        moh.setFirstName("moh name");
+        moh.setFullName("moh fullname");
+        moh.setLastName("moh lastname");
+        moh.setPosition(UserRole.MOH);
+        moh.setNic("748393922");
+        moh.setUsername("Moh123");
+        moh.setPassword(getEncodedPassword("Moh@123"));
+        moh.setArea("Mathara");
+        moh.setEmail("moh@gmail.com");
+        moh.setGender("Male");
+        moh.setContactNo("0922023922");
+        moh.setMarriedStatus("yes");
+        users.add(moh);
+
+        //Add Midwife
+        User midwife=new User();
+        midwife.setId(92020202020L);
+        midwife.setFirstName("mifwife name");
+        midwife.setFullName("midwife fullname");
+        midwife.setLastName("midwife lastname");
+        midwife.setPosition(UserRole.Midwife);
+        midwife.setNic("789939w22");
+        midwife.setUsername("Midwife123");
+        midwife.setPassword(getEncodedPassword("Midwife@123"));
+        midwife.setArea("Akurassa");
+        midwife.setEmail("midwife@gmail.com");
+        midwife.setGender("Female");
+        midwife.setContactNo("076023922");
+        midwife.setMarriedStatus("yes");
+        users.add(midwife);
 
         // Save all users to the database
         userRepository.saveAll(users);
