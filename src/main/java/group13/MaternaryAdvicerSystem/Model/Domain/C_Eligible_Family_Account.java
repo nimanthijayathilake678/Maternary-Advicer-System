@@ -45,4 +45,10 @@ public class C_Eligible_Family_Account {
     @OneToMany(mappedBy = "accountNo")
     private Set<C_Medical_Conditions> medicalInfos = new HashSet<>();
 
+    @OneToMany(mappedBy = "accountNo")
+    private Set<C_Sexual_And_Reproductive_Health> sexualAndReproductiveHealths = new HashSet<>();
+
+    @OneToMany(mappedBy = "accountNo")
+    private Set<C_Other_Sexual_And_Reproductive_Health> otherSexualAndReproductiveHealths = new HashSet<>();
+
 }
