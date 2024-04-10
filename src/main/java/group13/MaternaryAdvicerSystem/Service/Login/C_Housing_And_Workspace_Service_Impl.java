@@ -46,6 +46,8 @@ public class C_Housing_And_Workspace_Service_Impl implements C_Housing_And_Works
             c_housing_and_workspace_To_Update.setFinancialManagement(updateHousingAndWorkspace.isFinancialManagement());
             c_housing_and_workspace_To_Update.setCleanSafeWater(updateHousingAndWorkspace.isCleanSafeWater());
             c_housing_and_workspace_To_Update.setToiletFacilities(updateHousingAndWorkspace.isToiletFacilities());
+            c_housing_and_workspace_To_Update.setProperWasteDispsal(updateHousingAndWorkspace.isProperWasteDispsal());
+            c_housing_and_workspace_To_Update.setEnvironmentalHazardousConditions(updateHousingAndWorkspace.isEnvironmentalHazardousConditions());
             return true;
         }
         return false;

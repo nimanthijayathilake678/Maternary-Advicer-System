@@ -46,4 +46,10 @@ public class C_Housing_And_Workspace {
 
     @Column(nullable = false)
     private boolean toiletFacilities;
+
+    @Column(nullable = false)
+    private boolean properWasteDispsal;
+
+    @Column(nullable = false)
+    private boolean environmentalHazardousConditions;
 }
