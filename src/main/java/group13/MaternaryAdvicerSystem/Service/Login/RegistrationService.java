@@ -45,7 +45,7 @@ public class RegistrationService {
         family.setFullName("Family fullname");
         family.setLastName("Family lastname");
         family.setPosition(UserRole.Family);
-        family.setRegNum("F00001");
+        family.setRegNum("ABC123456");
         family.setUsername("Family123");
         family.setPassword(getEncodedPassword("Family@123"));
         family.setArea("Mathara");
