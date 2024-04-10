@@ -15,7 +15,7 @@ import java.util.Date;
 @Data
 public class UserRegisterDTO {
     private Long id;
-    private String nicNo;
+    private String regNum;
     private String fullName;
     private String firstName;
     private String lastName;
