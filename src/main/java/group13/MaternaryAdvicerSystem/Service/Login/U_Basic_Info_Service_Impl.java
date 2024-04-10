@@ -7,10 +7,6 @@ import group13.MaternaryAdvicerSystem.Repository.Login.UserRegisterRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 @Service
 public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
     @Autowired
@@ -24,7 +20,7 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
     public void saveuser(UserRegisterDTO user){
         User user_basic_info=new User();
         //user_basic_info.setId(user.getId());
-        user_basic_info.setNic(user.getNicNo());
+        user_basic_info.setRegNum(user.getRegNum());
         user_basic_info.setContactNo(user.getContactNo());
         user_basic_info.setMarriedStatus(user.getMarriedStatus());
         user_basic_info.setArea(user.getArea());
