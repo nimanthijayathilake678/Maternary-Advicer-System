@@ -37,7 +37,7 @@ public class C_Medical_Conditions_Controller {
     }
 
     @PutMapping("/{id}")
-    public String updateEligibleFamilyAccount(@RequestBody C_Medical_Conditions updateMedicalDetail, @PathVariable Long id){
+    public String updateMedicalConditions(@RequestBody C_Medical_Conditions updateMedicalDetail, @PathVariable Long id){
         c_medical_conditions_service.updateMedicalConditions(updateMedicalDetail,id);
         return "Update Family account details successfully";
     }
