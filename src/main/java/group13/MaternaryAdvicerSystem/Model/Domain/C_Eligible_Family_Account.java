@@ -58,7 +58,9 @@ public class C_Eligible_Family_Account {
     private Set<C_Family_Nutrition> familyNutritions = new HashSet<>();
 
     @OneToMany(mappedBy = "accountNo")
-    private Set<C_Life_Style> lifeStyles = new HashSet<>();
+    private Set<C_Housing_And_Workspace> housingAndWorkspaces = new HashSet<>();
+
+
 
 
 
