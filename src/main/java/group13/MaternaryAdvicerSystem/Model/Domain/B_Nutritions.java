@@ -17,7 +17,7 @@ public class B_Nutritions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="babynum",referencedColumnName = "B_Reg_Num")
     private  B_Basic_Info babyNum;
     @Column(nullable = false)
