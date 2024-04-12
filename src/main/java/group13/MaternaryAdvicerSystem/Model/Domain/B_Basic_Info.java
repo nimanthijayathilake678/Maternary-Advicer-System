@@ -51,4 +51,7 @@ public class B_Basic_Info {
 
     @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
     private List<B_NewBorn_Health> newBornHealths;
+
+    @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
+    private List<B_Nutritions> nutritions;
 }
