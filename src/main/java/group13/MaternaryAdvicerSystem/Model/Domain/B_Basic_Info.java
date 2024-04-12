@@ -45,4 +45,7 @@ public class B_Basic_Info {
 
     @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
     private List<B_Immunization> immunizationRecords;
+
+    @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
+    private List<B_Immunization_Referels> immunizationReferels;
 }
