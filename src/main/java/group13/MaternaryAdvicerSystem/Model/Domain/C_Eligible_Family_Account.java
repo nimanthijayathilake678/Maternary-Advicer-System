@@ -60,6 +60,8 @@ public class C_Eligible_Family_Account {
     @OneToMany(mappedBy = "accountNo")
     private Set<C_Housing_And_Workspace> housingAndWorkspaces = new HashSet<>();
 
+    @OneToMany(mappedBy = "accountNo")
+    private Set<C_Filled_By_Midwife> filledByMidwives  = new HashSet<>();
 
 
 
