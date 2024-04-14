@@ -30,11 +30,11 @@ public class B_Immunization_Service_Impl implements B_Immunization_Service{
             b_immunization.setBabyNum(basicInfo.get());
         }
 
-        b_immunization.setB_Immunization_Name(babyImmune.getB_Immunization_Name());
-        b_immunization.setB_Age_For_Vaccine_Date(babyImmune.getB_Age_For_Vaccine_Date());
-        b_immunization.setB_Vaccine_Date(babyImmune.getB_Vaccine_Date());
-        b_immunization.setB_Batch_No(babyImmune.getB_Batch_No());
-        b_immunization.setB_adverse_Effects(babyImmune.getB_adverse_Effects());
+        b_immunization.setB_Immunization_Name(babyImmune.getVaccineName());
+        b_immunization.setB_Age_For_Vaccine_Date(babyImmune.getAgeForVaccine());
+        b_immunization.setB_Vaccine_Date(babyImmune.getVaccineDate());
+        b_immunization.setB_Batch_No(babyImmune.getBatchNo());
+        b_immunization.setB_adverse_Effects(babyImmune.getAdverseEffects());
 
         b_immunization_repository.save(b_immunization);
 
@@ -55,10 +55,10 @@ public class B_Immunization_Service_Impl implements B_Immunization_Service{
             for (B_Immunization immunization : b_immunizations) {
                 Save_Immunization_Dto saveImmunizationDto = new Save_Immunization_Dto();
                 saveImmunizationDto.setBabyNum(immunization.getBabyNum().getB_Reg_Num());
-                saveImmunizationDto.setB_Batch_No(immunization.getB_Batch_No());
-                saveImmunizationDto.setB_Immunization_Name(immunization.getB_Immunization_Name());
-                saveImmunizationDto.setB_adverse_Effects(immunization.getB_adverse_Effects());
-                saveImmunizationDto.setB_Vaccine_Date(immunization.getB_Vaccine_Date());
+                saveImmunizationDto.setBatchNo(immunization.getB_Batch_No());
+                saveImmunizationDto.setVaccineName(immunization.getB_Immunization_Name());
+                saveImmunizationDto.setAdverseEffects(immunization.getB_adverse_Effects());
+                saveImmunizationDto.setVaccineDate(immunization.getB_Vaccine_Date());
 
                 saveImmunizationDtos.add(saveImmunizationDto);
 
