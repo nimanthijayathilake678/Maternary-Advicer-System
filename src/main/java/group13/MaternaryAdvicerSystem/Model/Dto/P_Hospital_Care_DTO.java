@@ -10,6 +10,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 public class P_Hospital_Care_DTO {
+    private String pregnancyId;
+    private String eligibleId;
     private String poa;
     private String urine;
     private String oedema;
@@ -27,7 +29,7 @@ public class P_Hospital_Care_DTO {
     private String ac;
     private String fl;
     private String liqour;
-    private LocalDate placenta;
+    private String placenta;
     private String averagepoa;
     private String anyother;
     private LocalDate nextvisitdate;

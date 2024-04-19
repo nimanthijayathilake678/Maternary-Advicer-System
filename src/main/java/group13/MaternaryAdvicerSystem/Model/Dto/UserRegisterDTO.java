@@ -19,6 +19,7 @@ public class UserRegisterDTO {
     private String fullName;
     private String firstName;
     private String lastName;
+    //private String nicNo;
     private String contactNo;
     private String email;
     private String gender;

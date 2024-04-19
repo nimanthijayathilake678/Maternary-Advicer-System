@@ -24,6 +24,7 @@ public class RegistrationService {
         user.setLastName(userdto.getLastName());
         user.setFullName(userdto.getFullName());
         user.setUsername(userdto.getUsername());
+       // user.setRegNum(userdto.getNicNo());
         user.setRegNum(userdto.getRegNum());
         user.setPassword(getEncodedPassword(userdto.getPassword()));
         user.setPosition(userdto.getPosition());
