@@ -90,6 +90,23 @@ public class RegistrationService {
         midwife.setMarriedStatus("yes");
         users.add(midwife);
 
+        //Add Vog
+        User vog=new User();
+        midwife.setId(92020203520L);
+        midwife.setFirstName("vog name");
+        midwife.setFullName("vog fullname");
+        midwife.setLastName("vog lastname");
+        midwife.setPosition(UserRole.VogDoctor);
+        midwife.setRegNum("VG00001");
+        midwife.setUsername("Vog123");
+        midwife.setPassword(getEncodedPassword("Vog@123"));
+        midwife.setArea("Akurassa");
+        midwife.setEmail("vog@gmail.com");
+        midwife.setGender("Female");
+        midwife.setContactNo("076023922");
+        midwife.setMarriedStatus("yes");
+        users.add(midwife);
+
         // Save all users to the database
         userRepository.saveAll(users);
 
