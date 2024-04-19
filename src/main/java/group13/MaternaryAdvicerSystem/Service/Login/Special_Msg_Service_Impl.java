@@ -63,8 +63,23 @@ public class Special_Msg_Service_Impl implements Special_Msg_Service {
             save_special_msg_dto.setMsg_Content(specialMsg.getMsg_Content());
             save_special_msg_dto.setMsg_Priority(specialMsg.getMsg_Priority());
             save_special_msg_dto.setMsg_Topic(specialMsg.getMsg_Topic());
+            save_special_msg_dto.setId(specialMsg.getId());
             saveSpecialMsgDtos.add(save_special_msg_dto);
         }
         return saveSpecialMsgDtos;
+    }
+
+    @Override
+    public void deleteSpecialMsgById(Long id) {
+
+        Optional<SpecialMsg> optionalSpecialMsg = special_service_repository.findById(id);
+
+        if (optionalSpecialMsg.isPresent()) {
+            // Delete the special message if it exists
+            special_service_repository.delete(optionalSpecialMsg.get());
+        } else {
+            // Handle the case when the special message does not exist
+            throw new IllegalArgumentException("Special message with id " + id + " does not exist");
+        }
     }
 }

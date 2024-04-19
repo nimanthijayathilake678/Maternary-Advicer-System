@@ -26,4 +26,9 @@ public class Special_Msg_Controller {
     public List<Save_Special_Msg_Dto> getSpecialMsg(@PathVariable String regNum){
         return special_msg_service.getSpecialMsg(regNum);
     }
+    @DeleteMapping("/deletemsg/{id}")
+    public String deleteSpecialMsg(@PathVariable Long id){
+        special_msg_service.deleteSpecialMsgById(id);
+        return "Special message deleted successfully";
+    }
 }

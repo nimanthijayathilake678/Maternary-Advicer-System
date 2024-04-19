@@ -8,7 +8,7 @@ public interface Special_Msg_Service {
 
     public void saveSpecialMsg(Save_Special_Msg_Dto specialMsg);
     public List<Save_Special_Msg_Dto> getSpecialMsg(String babyNum);
-
+    public void deleteSpecialMsgById(Long id);
 }
 
 
