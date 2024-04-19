@@ -24,6 +24,7 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
         user_basic_info.setContactNo(user.getContactNo());
         user_basic_info.setMarriedStatus(user.getMarriedStatus());
         user_basic_info.setArea(user.getArea());
+       // user_basic_info.setArea(user.getNicNo());
         user_basic_info.setEmail(user.getEmail());
         user_basic_info.setGender(user.getGender());
         user_basic_info.setFirstName(user.getFirstName());

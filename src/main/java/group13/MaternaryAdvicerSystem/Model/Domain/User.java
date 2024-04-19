@@ -26,6 +26,8 @@ public class User {
     private String fullName;
     @Column(nullable = false)
     private String firstName;
+    //@Column(nullable = false)
+   // private String nicNo;
     @Column(nullable = false)
     private String lastName;
     @Column(nullable = false)
