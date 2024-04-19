@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class P_Hospital_Clinic_Care {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
+    private Long id;
     private String pregnancyId;
     private String eligibleId;
     private String poa;
