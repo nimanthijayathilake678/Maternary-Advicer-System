@@ -92,20 +92,20 @@ public class RegistrationService {
 
         //Add Vog
         User vog=new User();
-        midwife.setId(92020203520L);
-        midwife.setFirstName("vog name");
-        midwife.setFullName("vog fullname");
-        midwife.setLastName("vog lastname");
-        midwife.setPosition(UserRole.VogDoctor);
-        midwife.setRegNum("VG00001");
-        midwife.setUsername("Vog123");
-        midwife.setPassword(getEncodedPassword("Vog@123"));
-        midwife.setArea("Akurassa");
-        midwife.setEmail("vog@gmail.com");
-        midwife.setGender("Female");
-        midwife.setContactNo("076023922");
-        midwife.setMarriedStatus("yes");
-        users.add(midwife);
+        vog.setId(92020203520L);
+        vog.setFirstName("vog name");
+        vog.setFullName("vog fullname");
+        vog.setLastName("vog lastname");
+        vog.setPosition(UserRole.VogDoctor);
+        vog.setRegNum("VG00001");
+        vog.setUsername("Vog123");
+        vog.setPassword(getEncodedPassword("Vog@123"));
+        vog.setArea("Akurassa");
+        vog.setEmail("vog@gmail.com");
+        vog.setGender("Female");
+        vog.setContactNo("076023922");
+        vog.setMarriedStatus("yes");
+        users.add(vog);
 
         // Save all users to the database
         userRepository.saveAll(users);
