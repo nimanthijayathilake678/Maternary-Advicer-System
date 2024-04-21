@@ -11,5 +11,6 @@ public interface B_Basic_Info_Service {
     public List<B_Basic_Info_Dto> getBabyDetails(String babyNum);
     public List<B_Basic_Info_Dto> getBabyDetailsVog();
     public List<B_Basic_Info_Dto> getBabyDetailsByCoupleNum(String coupleNum);
-    public List<B_Basic_Info_Dto>  getBabyDetailsByFsho(String fshoname);
+    //public List<B_Basic_Info_Dto> getBabyDetailsByMidwife(String fsho);
+
 }

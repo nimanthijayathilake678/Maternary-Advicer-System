@@ -26,10 +26,11 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
     public void saveuser(UserRegisterDTO user){
         User user_basic_info=new User();
         //user_basic_info.setId(user.getId());
-        user_basic_info.setNic(user.getNicNo());
+        user_basic_info.setRegNum(user.getRegNum());
         user_basic_info.setContactNo(user.getContactNo());
         user_basic_info.setMarriedStatus(user.getMarriedStatus());
         user_basic_info.setArea(user.getArea());
+       // user_basic_info.setArea(user.getNicNo());
         user_basic_info.setEmail(user.getEmail());
         user_basic_info.setFirstName(user.getFirstName());
         user_basic_info.setLastName(user.getLastName());
