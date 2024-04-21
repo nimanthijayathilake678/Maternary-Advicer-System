@@ -15,47 +15,83 @@ public class C_Family_Nutrition {
     private Long familyNutritionId;
 
     @ManyToOne
-    private C_Eligible_Family_Account accountNo;
+    private User user;
 
     @Column(nullable = false)
-    private String gender;
-
-    @Column(nullable = false)
-    private boolean threeMainMeals;
+    private boolean w_threeMainMeals;
 
 
     @Column(nullable = false)
-    private boolean animalProteins;
+    private boolean w_animalProteins;
 
 
     @Column(nullable = false)
-    private boolean plantProteinsGrains;
+    private boolean w_plantProteinsGrains;
 
 
     @Column(nullable = false)
-    private boolean vegetables;
+    private boolean w_vegetables;
 
 
     @Column(nullable = false)
-    private boolean greens;
+    private boolean w_greens;
 
 
     @Column(nullable = false)
-    private boolean fruits;
+    private boolean w_fruits;
 
 
     @Column(nullable = false)
-    private boolean havingMealTogether;
+    private boolean w_havingMealTogether;
 
 
     @Column(nullable = false)
-    private boolean includingGardenHarvest;
+    private boolean w_includingGardenHarvest;
 
 
     @Column(nullable = false)
-    private boolean tooMushSugar;
+    private boolean w_tooMushSugar;
 
 
     @Column(nullable = false)
-    private boolean tooMuchOil;
+    private boolean w_tooMuchOil;
+
+    @Column(nullable = false)
+    private boolean h_threeMainMeals;
+
+
+    @Column(nullable = false)
+    private boolean h_animalProteins;
+
+
+    @Column(nullable = false)
+    private boolean h_plantProteinsGrains;
+
+
+    @Column(nullable = false)
+    private boolean h_vegetables;
+
+
+    @Column(nullable = false)
+    private boolean h_greens;
+
+
+    @Column(nullable = false)
+    private boolean h_fruits;
+
+
+    @Column(nullable = false)
+    private boolean h_havingMealTogether;
+
+
+    @Column(nullable = false)
+    private boolean h_includingGardenHarvest;
+
+
+    @Column(nullable = false)
+    private boolean h_tooMushSugar;
+
+
+    @Column(nullable = false)
+    private boolean h_tooMuchOil;
 }

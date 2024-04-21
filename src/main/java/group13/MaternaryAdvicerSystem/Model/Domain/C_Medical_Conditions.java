@@ -14,89 +14,157 @@ public class C_Medical_Conditions {
     @GeneratedValue
     private Long medicalConditionId;
 
+    @OneToOne
+    private User user;
+
     @ManyToOne
     private C_Eligible_Family_Account accountNo;
 
     @Column(nullable = false)
-    private String gender;
-
-    @Column(nullable = false)
-    private boolean anemia ;
+    private boolean w_anemia ;
 
 
     @Column(nullable = false)
-    private boolean congenital ;
+    private boolean w_congenital ;
 
 
     @Column(nullable = false)
-    private boolean rheumaticHeartDisease;
+    private boolean w_rheumaticHeartDisease;
 
 
     @Column(nullable = false)
-    private boolean diabetesMellitus ;
+    private boolean w_diabetesMellitus ;
 
 
     @Column(nullable = false)
-    private boolean hypertension ;
+    private boolean w_hypertension ;
 
 
     @Column(nullable = false)
-    private boolean hypercholesterolemia ;
+    private boolean w_hypercholesterolemia ;
 
 
     @Column(nullable = false)
-    private boolean asthma ;
+    private boolean w_asthma ;
 
 
     @Column(nullable = false)
-    private boolean thyroid ;
+    private boolean w_thyroid ;
 
 
     @Column(nullable = false)
-    private boolean untratedDecayedTeeth ;
+    private boolean w_untratedDecayedTeeth ;
 
 
     @Column(nullable = false)
-    private boolean toothDecayBleedingGums ;
+    private boolean w_toothDecayBleedingGums ;
 
 
     @Column(nullable = false)
-    private boolean mentalIllnesses ;
+    private boolean w_mentalIllnesses ;
 
 
     @Column(nullable = false)
-    private boolean rheumaticFever ;
+    private boolean w_rheumaticFever ;
 
 
     @Column(nullable = false)
-    private boolean epilepsy ;
+    private boolean w_epilepsy ;
 
 
     @Column(nullable = false)
-    private boolean foodAllergies ;
+    private boolean w_foodAllergies ;
 
 
     @Column(nullable = false)
-    private boolean drugsAllergies ;
+    private boolean w_drugsAllergies ;
 
 
     @Column(nullable = false)
-    private boolean longTermMedicine ;
+    private boolean w_longTermMedicine ;
 
 
     @Column(nullable = false)
-    private boolean otherSurgeries ;
+    private boolean w_otherSurgeries ;
 
 
     @Column(nullable = false)
-    private boolean rubellaVaccine ;
+    private boolean w_rubellaVaccine ;
 
 
     @Column(nullable = false)
-    private boolean folicAcid ;
+    private boolean w_folicAcid ;
 
 
     @Column(nullable = false)
-    private boolean bloodRelationMarrage ;
+    private boolean w_bloodRelationMarrage ;
+
+
+    @Column(nullable = false)
+    private boolean h_anemia ;
+
+
+    @Column(nullable = false)
+    private boolean h_congenital ;
+
+
+    @Column(nullable = false)
+    private boolean h_rheumaticHeartDisease;
+
+
+    @Column(nullable = false)
+    private boolean h_diabetesMellitus ;
+
+
+    @Column(nullable = false)
+    private boolean h_hypertension ;
+
+
+    @Column(nullable = false)
+    private boolean h_hypercholesterolemia ;
+
+
+    @Column(nullable = false)
+    private boolean h_asthma ;
+
+
+    @Column(nullable = false)
+    private boolean h_thyroid ;
+
+
+    @Column(nullable = false)
+    private boolean h_untratedDecayedTeeth ;
+
+
+    @Column(nullable = false)
+    private boolean h_toothDecayBleedingGums ;
+
+
+    @Column(nullable = false)
+    private boolean h_mentalIllnesses ;
+
+
+    @Column(nullable = false)
+    private boolean h_rheumaticFever ;
+
+
+    @Column(nullable = false)
+    private boolean h_epilepsy ;
+
+
+    @Column(nullable = false)
+    private boolean h_foodAllergies ;
+
+
+    @Column(nullable = false)
+    private boolean h_drugsAllergies ;
+
+
+    @Column(nullable = false)
+    private boolean h_longTermMedicine ;
+
+
+    @Column(nullable = false)
+    private boolean h_otherSurgeries ;
 
 }

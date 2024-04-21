@@ -16,7 +16,8 @@ public class C_Other_Sexual_And_Reproductive_Health {
     private Long OtherSexualAndReproductiveid;
 
     @ManyToOne
-    private C_Eligible_Family_Account accountNo;
+    private User user;
+
 
     @Column(nullable = false)
     private String gender;

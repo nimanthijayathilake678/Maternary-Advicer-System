@@ -14,40 +14,68 @@ public class C_Family_Health {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long familyHealthId;
 
-    @ManyToOne
-    private C_Eligible_Family_Account accountNo;
+    @OneToOne
+    private User user;
 
     @Column(nullable = false)
-    private String gender;
-
-    @Column(nullable = false)
-    private boolean hypertension;
+    private boolean w_hypertension;
 
 
     @Column(nullable = false)
-    private boolean diabetesMellitus;
+    private boolean w_diabetesMellitus;
 
 
     @Column(nullable = false)
-    private boolean heartDiseases;
+    private boolean w_heartDiseases;
 
 
     @Column(nullable = false)
-    private boolean nervousDisorders;
+    private boolean w_nervousDisorders;
 
 
     @Column(nullable = false)
-    private boolean hemophilia;
+    private boolean w_hemophilia;
 
 
     @Column(nullable = false)
-    private boolean thalassemia;
+    private boolean w_thalassemia;
 
 
     @Column(nullable = false)
-    private boolean mentalProblems;
+    private boolean w_mentalProblems;
 
 
     @Column(nullable = false)
-    private boolean twins;
+    private boolean w_twins;
+
+    @Column(nullable = false)
+    private boolean h_hypertension;
+
+
+    @Column(nullable = false)
+    private boolean h_diabetesMellitus;
+
+
+    @Column(nullable = false)
+    private boolean h_heartDiseases;
+
+
+    @Column(nullable = false)
+    private boolean h_nervousDisorders;
+
+
+    @Column(nullable = false)
+    private boolean h_hemophilia;
+
+
+    @Column(nullable = false)
+    private boolean h_thalassemia;
+
+
+    @Column(nullable = false)
+    private boolean h_mentalProblems;
+
+
+    @Column(nullable = false)
+    private boolean h_twins;
 }

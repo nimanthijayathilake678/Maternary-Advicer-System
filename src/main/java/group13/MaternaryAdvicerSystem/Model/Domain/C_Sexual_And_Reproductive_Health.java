@@ -14,59 +14,82 @@ public class C_Sexual_And_Reproductive_Health {
     @GeneratedValue
     private Long sexualAndReproductiveId;
 
-    @ManyToOne
-    private C_Eligible_Family_Account accountNo;
+    @OneToOne
+    private User user;
 
     @Column(nullable = false)
-    private String gender;
+    private boolean w_regularMonthlyPeriod;
 
     @Column(nullable = false)
-    private boolean regularMonthlyPeriod;
+    private int w_noOfPeriodDays;
 
     @Column(nullable = false)
-    private int noOfPeriodDays;
+    private boolean w_heavyBleeding;
 
     @Column(nullable = false)
-    private boolean heavyBleeding;
+    private boolean w_vaginaBleeding;
 
     @Column(nullable = false)
-    private boolean vaginaBleeding;
+    private boolean w_abdominalPain;
 
     @Column(nullable = false)
-    private boolean abdominalPain;
+    private boolean w_unusualColorFoulSmelling;
 
     @Column(nullable = false)
-    private boolean unusualColorFoulSmelling;
+    private boolean w_abortionHistory;
 
     @Column(nullable = false)
-    private boolean abortionHistory;
+    private boolean w_stillBirthHistory;
 
     @Column(nullable = false)
-    private boolean stillBirthHistory;
+    private boolean w_infantMortalityHistory;
 
     @Column(nullable = false)
-    private boolean infantMortalityHistory;
+    private boolean w_tubalPregnancyHistory;
 
     @Column(nullable = false)
-    private boolean tubalPregnancyHistory;
+    private boolean w_isItching;
 
     @Column(nullable = false)
-    private boolean isItching;
+    private boolean w_reproductiveOrganSurgery;
 
     @Column(nullable = false)
-    private boolean reproductiveOrganSurgery;
+    private String w_reproductiveOrganSurgeryDetails;
 
     @Column(nullable = false)
-    private String reproductiveOrganSurgeryDetails;
+    private boolean w_sexualProblems;
 
     @Column(nullable = false)
-    private boolean sexualProblems;
+    private boolean w_satisfiedSexualRelationship;
 
     @Column(nullable = false)
-    private boolean satisfiedSexualRelationship;
+    private boolean w_breastSelfExam;
 
     @Column(nullable = false)
-    private boolean breastSelfExam;
+    private boolean h_isItching;
 
+    @Column(nullable = false)
+    private boolean h_reproductiveOrganSurgery;
+
+    @Column(nullable = false)
+    private String h_reproductiveOrganSurgeryDetails;
+
+    @Column(nullable = false)
+    private boolean h_sexualProblems;
+
+    @Column(nullable = false)
+    private boolean h_satisfiedSexualRelationship;
+
+    @Column(nullable = false)
+    private boolean familyPlanning;
+
+    @Column(nullable = false)
+    private String familyPlanningDetails;
+
+    @Column(nullable = false)
+    private boolean delayingFirstChild;
+
+    @Column(nullable = false)
+    private int delayingTimePeriod;
 
 }
