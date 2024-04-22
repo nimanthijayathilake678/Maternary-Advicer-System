@@ -62,7 +62,7 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
         Optional<User> user_optional =  U_Basic_Info_Repository.findById(id);
         if(user_optional.isPresent()){
             User user_To_Update = user_optional.get();
-            user_To_Update.setNic(updateUserlInfoDetails.getNic());
+           // user_To_Update.setNic(updateUserlInfoDetails.getNic());
             user_To_Update.setFullName(updateUserlInfoDetails.getFullName());
             user_To_Update.setFirstName(updateUserlInfoDetails.getFirstName());
             user_To_Update.setLastName(updateUserlInfoDetails.getLastName());
