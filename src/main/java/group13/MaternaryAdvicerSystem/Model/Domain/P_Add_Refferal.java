@@ -18,9 +18,9 @@ public class P_Add_Refferal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String pregnancyRegNo;
-    private String eligibilityRegNo;
+    private String pregnancyId;
+    private String eligibleId;
     private String referredId;
-    private String referredRole;
+    private String refferedRole;
     private String reason;
 }
