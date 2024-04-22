@@ -1,15 +1,12 @@
 package group13.MaternaryAdvicerSystem.Controller;
-import group13.MaternaryAdvicerSystem.Model.Dto.B_Basic_Info_Dto;
-import group13.MaternaryAdvicerSystem.Model.Dto.Save_Immunization_Dto;
-import group13.MaternaryAdvicerSystem.Service.Login.B_Basic_Info_Service;
-import group13.MaternaryAdvicerSystem.Service.Login.U_Basic_Info_Service_Impl;
+import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import group13.MaternaryAdvicerSystem.Model.Dto.UserRegisterDTO;
 import group13.MaternaryAdvicerSystem.Service.Login.U_Basic_Info_Service;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/newuser")
@@ -25,6 +22,23 @@ public class U_Basic_Info_Controller {
     public String adduser(@RequestBody UserRegisterDTO user){
         u_basic_info_service.saveuser(user);
         return "New user is added";
+    }
+
+    @GetMapping
+    public List<User> getAllUserInfo(){
+        return u_basic_info_service.getAllUserInformation();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserInformationById(@PathVariable Long id){
+        return new ResponseEntity<>(u_basic_info_service.getUserInfoById(id), HttpStatus.OK);
+    }
+
+
+    @PutMapping("/{id}")
+    public String updateUserDetails(@RequestBody User updateUserDetail, @PathVariable Long id){
+        u_basic_info_service.updateUserInfo( updateUserDetail,id);
+        return "Update user details successfully";
     }
 
 

@@ -2,6 +2,7 @@ package group13.MaternaryAdvicerSystem.Service.Login;
 
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Eligible_Family_Account;
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Personal_Info;
+import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Repository.Login.C_Personal_Info_Repository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,20 +24,23 @@ public class C_Personal_Info_Service_Impl implements C_Personal_Info_Service {
     }
 
     @Override
-    public C_Personal_Info getPersonalInfoById(Long id){
-        return c_personal_info_repository.findById(id).orElse(null);
+    public C_Personal_Info getPersonalInfoById(Long userId){
+        return c_personal_info_repository.findByUserId(userId);
     }
 
     @Override
-    public boolean updatePersonalInfo(C_Personal_Info updatePersonalInfoDetails, Long id) {
-        Optional<C_Personal_Info> c_personal_info_optional =  c_personal_info_repository.findById(id);
-        if(c_personal_info_optional.isPresent()){
-            C_Personal_Info c_peronal_info_To_Update = c_personal_info_optional.get();
-            c_peronal_info_To_Update.setGender(updatePersonalInfoDetails.getGender());
-            c_peronal_info_To_Update.setDob(updatePersonalInfoDetails.getDob());
-            c_peronal_info_To_Update.setEducationalLevel(updatePersonalInfoDetails.getEducationalLevel());
-            c_peronal_info_To_Update.setOccupation(updatePersonalInfoDetails.getOccupation());
-            c_peronal_info_To_Update.setMarriedDate(updatePersonalInfoDetails.getMarriedDate());
+    public boolean updatePersonalInfo(C_Personal_Info updatePersonalInfoDetails, Long userId) {
+        C_Personal_Info c_personal_info_optional =  c_personal_info_repository.findByUserId(userId);
+        if(c_personal_info_optional!=null){
+            c_personal_info_optional.setW_dob(updatePersonalInfoDetails.getW_dob());
+            c_personal_info_optional.setW_educationalLevel(updatePersonalInfoDetails.getW_educationalLevel());
+            c_personal_info_optional.setW_occupation(updatePersonalInfoDetails.getW_occupation());
+            c_personal_info_optional.setH_name(updatePersonalInfoDetails.getH_name());
+            c_personal_info_optional.setH_dob(updatePersonalInfoDetails.getH_dob());
+            c_personal_info_optional.setH_educationalLevel(updatePersonalInfoDetails.getH_educationalLevel());
+            c_personal_info_optional.setH_occupation(updatePersonalInfoDetails.getH_occupation());
+            c_personal_info_optional.setMarriedDate(updatePersonalInfoDetails.getMarriedDate());
+            c_personal_info_optional.setAddress(updatePersonalInfoDetails.getAddress());
             return true;
         }
         return false;

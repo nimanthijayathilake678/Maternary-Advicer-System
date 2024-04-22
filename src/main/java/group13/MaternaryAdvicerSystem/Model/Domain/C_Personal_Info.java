@@ -19,25 +19,37 @@ public class C_Personal_Info {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long c_personal_info_id;
+    private Long personalInfoId;
 
-    @ManyToOne
-    private C_Eligible_Family_Account accountNo;
-
-
-    @Column(nullable = false)
-    private String gender;
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private User user;
 
     @Column(nullable = false)
-    private LocalDate dob;
+    private LocalDate w_dob;
 
     @Column(nullable = false)
-    private String educationalLevel;
+    private String w_educationalLevel;
 
     @Column(nullable = false)
-    private String occupation;
+    private String w_occupation;
+
+    @Column(nullable = false)
+    private String h_name;
+
+    @Column(nullable = false)
+    private LocalDate h_dob;
+
+    @Column(nullable = false)
+    private String h_educationalLevel;
+
+    @Column(nullable = false)
+    private String h_occupation;
 
     @Column(nullable = false)
     private LocalDate marriedDate;
+
+    @Column(nullable = false)
+    private String address;
 
 }

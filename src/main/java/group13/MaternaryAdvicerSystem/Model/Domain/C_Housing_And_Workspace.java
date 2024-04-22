@@ -15,7 +15,7 @@ public class C_Housing_And_Workspace {
     private Long familyNutritionId;
 
     @ManyToOne
-    private C_Eligible_Family_Account accountNo;
+    private User user;
 
     @Column(nullable = false)
     private String gender;
