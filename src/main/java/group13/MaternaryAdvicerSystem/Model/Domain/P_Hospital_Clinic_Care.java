@@ -11,34 +11,35 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 @Entity
+@Table(name = "p_hospital_clinic_care")
 public class P_Hospital_Clinic_Care {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String pregnancyRegNo;
-    private String eligibilityRegNo;
+    private String pregnancyId;
+    private String eligibleId;
     private String poa;
     private String urine;
     private String oedema;
-    private String bloodPressure;
-    private String fundalHeight;
+    private String bloodpressure;
+    private String fundalheight;
     private String foetalLie;
     private String presentation;
     private String fM;
     private String fhs;
     private String ebw;
     private String crl;
-    private String gestSac;
+    private String gestsac;
     private String bpd;
     private String hc;
     private String ac;
     private String fl;
     private String liqour;
     private String placenta;
-    private String averagePOA;
+    private String averagepoa;
     private String anyother;
-    private LocalDate nextVisitDate;
-    private String doctorId;
+    private LocalDate nextvisitdate;
+    private String doctorid;
     private String designation;
 
 }
