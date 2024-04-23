@@ -10,7 +10,7 @@ import group13.MaternaryAdvicerSystem.Service.Login.U_Basic_Info_Service;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/newuser")
 public class U_Basic_Info_Controller {
