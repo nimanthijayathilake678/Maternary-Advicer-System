@@ -17,7 +17,7 @@ public class C_Sexual_And_Reproductive_Health {
     @OneToOne
     private User user;
 
-    @Column(nullable = false)
+
     private boolean w_regularMonthlyPeriod;
 
     @Column(nullable = false)
@@ -38,7 +38,7 @@ public class C_Sexual_And_Reproductive_Health {
     @Column(nullable = false)
     private boolean w_abortionHistory;
 
-    @Column(nullable = false)
+   @Column(nullable = false)
     private boolean w_stillBirthHistory;
 
     @Column(nullable = false)
@@ -64,7 +64,6 @@ public class C_Sexual_And_Reproductive_Health {
 
     @Column(nullable = false)
     private boolean w_breastSelfExam;
-
     @Column(nullable = false)
     private boolean h_isItching;
 

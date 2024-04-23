@@ -11,14 +11,12 @@ import lombok.*;
 @Setter
 public class C_Medical_Conditions {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long medicalConditionId;
 
     @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
-
-    @ManyToOne
-    private C_Eligible_Family_Account accountNo;
 
     @Column(nullable = false)
     private boolean w_anemia ;
@@ -80,24 +78,24 @@ public class C_Medical_Conditions {
     private boolean w_drugsAllergies ;
 
 
-    @Column(nullable = false)
-    private boolean w_longTermMedicine ;
-
-
-    @Column(nullable = false)
-    private boolean w_otherSurgeries ;
-
-
-    @Column(nullable = false)
-    private boolean w_rubellaVaccine ;
-
-
-    @Column(nullable = false)
-    private boolean w_folicAcid ;
-
-
-    @Column(nullable = false)
-    private boolean w_bloodRelationMarrage ;
+//    @Column(nullable = false)
+//    private boolean w_longTermMedicine ;
+//
+//
+//    @Column(nullable = false)
+//    private boolean w_otherSurgeries ;
+//
+//
+//    @Column(nullable = false)
+//    private boolean w_rubellaVaccine ;
+//
+//
+//    @Column(nullable = false)
+//    private boolean w_folicAcid ;
+//
+//
+//    @Column(nullable = false)
+//    private boolean w_bloodRelationMarrage ;
 
 
     @Column(nullable = false)
@@ -160,11 +158,11 @@ public class C_Medical_Conditions {
     private boolean h_drugsAllergies ;
 
 
-    @Column(nullable = false)
-    private boolean h_longTermMedicine ;
-
-
-    @Column(nullable = false)
-    private boolean h_otherSurgeries ;
+//    @Column(nullable = false)
+//    private boolean h_longTermMedicine ;
+//
+//
+//    @Column(nullable = false)
+//    private boolean h_otherSurgeries ;
 
 }

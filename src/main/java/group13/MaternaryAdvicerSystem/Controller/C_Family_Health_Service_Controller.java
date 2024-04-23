@@ -33,12 +33,12 @@ public class C_Family_Health_Service_Controller {
     }
 
     @GetMapping("/{id}")
-    public C_Family_Health getRegisteredFamilyHealthById(@PathVariable User id){
+    public C_Family_Health getRegisteredFamilyHealthById(@PathVariable Long id){
         return  c_family_health_service.getFamilyHealthDetailsById(id);
     }
 
     @PutMapping("/{id}")
-    public String updateFamilyHealthInfo(@RequestBody C_Family_Health updateFamilyHealthDetail, @PathVariable User id){
+    public String updateFamilyHealthInfo(@RequestBody C_Family_Health updateFamilyHealthDetail, @PathVariable Long id){
         c_family_health_service.updateFamilyHealthDetails(updateFamilyHealthDetail,id);
         return "Update Family Health details successfully";
     }

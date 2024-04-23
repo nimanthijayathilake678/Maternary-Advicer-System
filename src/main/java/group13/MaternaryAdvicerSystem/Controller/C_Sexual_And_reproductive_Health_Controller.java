@@ -32,12 +32,12 @@ public class C_Sexual_And_reproductive_Health_Controller {
     }
 
     @GetMapping("/{id}")
-    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveInfoById(@PathVariable User id){
+    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveInfoById(@PathVariable Long id){
         return  c_sexual_and_reproductive_health_service. getSexualAndReproductiveHealthDetailsById(id);
     }
 
     @PutMapping("/{id}")
-    public String updateSexualAndReproductiveInfo(@RequestBody C_Sexual_And_Reproductive_Health updateSexualAndReproductiveDetail, @PathVariable User id){
+    public String updateSexualAndReproductiveInfo(@RequestBody C_Sexual_And_Reproductive_Health updateSexualAndReproductiveDetail, @PathVariable Long id){
         c_sexual_and_reproductive_health_service.updateSexualAndReproductiveHealthDetails(updateSexualAndReproductiveDetail,id);
         return "Update Add sexual and reproductive details successfully";
     }

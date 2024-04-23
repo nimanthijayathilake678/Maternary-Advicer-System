@@ -56,6 +56,7 @@ public class User {
     private String password;
     @Enumerated(EnumType.STRING)
     private UserRole Position;
+    private boolean familyFlag;
 
     @JsonIgnore
     @OneToOne(mappedBy = "user")

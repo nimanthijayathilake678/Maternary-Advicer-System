@@ -22,7 +22,7 @@ public class C_Personal_Info {
     private Long personalInfoId;
 
     @OneToOne
-    @PrimaryKeyJoinColumn
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
 
     @Column(nullable = false)

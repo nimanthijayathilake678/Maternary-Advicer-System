@@ -1,6 +1,7 @@
 package group13.MaternaryAdvicerSystem.Controller;
 import group13.MaternaryAdvicerSystem.Model.Domain.P_Add_Refferal;
 import group13.MaternaryAdvicerSystem.Model.Domain.User;
+import group13.MaternaryAdvicerSystem.Model.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,7 +48,5 @@ public class U_Basic_Info_Controller {
         u_basic_info_service.updateUserInfo( updateUserDetail,id);
         return "Update user details successfully";
     }
-
-
 
 }
