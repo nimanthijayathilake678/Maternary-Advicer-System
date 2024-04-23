@@ -5,7 +5,7 @@ import group13.MaternaryAdvicerSystem.Service.Login.IP_Add_Refferal_Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("http://localhost:3000") //allowing client application to consume the backed
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/addRefferal")
 @RequiredArgsConstructor

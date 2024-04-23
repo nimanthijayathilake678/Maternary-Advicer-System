@@ -1,4 +1,5 @@
 package group13.MaternaryAdvicerSystem.Controller;
+import group13.MaternaryAdvicerSystem.Model.Domain.P_Add_Refferal;
 import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Model.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import group13.MaternaryAdvicerSystem.Model.Dto.UserRegisterDTO;
 import group13.MaternaryAdvicerSystem.Service.Login.U_Basic_Info_Service;
 import java.util.List;
+
+import java.util.Objects;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/newuser")
@@ -24,6 +28,9 @@ public class U_Basic_Info_Controller {
         u_basic_info_service.saveuser(user);
         return "New user is added";
     }
+
+
+
 
     @GetMapping
     public List<User> getAllUserInfo(){
