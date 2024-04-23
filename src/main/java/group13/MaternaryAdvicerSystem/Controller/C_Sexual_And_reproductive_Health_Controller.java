@@ -2,6 +2,7 @@ package group13.MaternaryAdvicerSystem.Controller;
 
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Eligible_Family_Account;
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Sexual_And_Reproductive_Health;
+import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Service.Login.C_Eligible_Family_Account_Service;
 import group13.MaternaryAdvicerSystem.Service.Login.C_Sexual_And_Reproductive_Health_Service;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +32,12 @@ public class C_Sexual_And_reproductive_Health_Controller {
     }
 
     @GetMapping("/{id}")
-    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveInfoById(@PathVariable Long id){
+    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveInfoById(@PathVariable User id){
         return  c_sexual_and_reproductive_health_service. getSexualAndReproductiveHealthDetailsById(id);
     }
 
     @PutMapping("/{id}")
-    public String updateSexualAndReproductiveInfo(@RequestBody C_Sexual_And_Reproductive_Health updateSexualAndReproductiveDetail, @PathVariable Long id){
+    public String updateSexualAndReproductiveInfo(@RequestBody C_Sexual_And_Reproductive_Health updateSexualAndReproductiveDetail, @PathVariable User id){
         c_sexual_and_reproductive_health_service.updateSexualAndReproductiveHealthDetails(updateSexualAndReproductiveDetail,id);
         return "Update Add sexual and reproductive details successfully";
     }

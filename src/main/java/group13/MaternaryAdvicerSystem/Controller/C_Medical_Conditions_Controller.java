@@ -2,6 +2,7 @@ package group13.MaternaryAdvicerSystem.Controller;
 
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Eligible_Family_Account;
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Medical_Conditions;
+import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Service.Login.C_Eligible_Family_Account_Service;
 import group13.MaternaryAdvicerSystem.Service.Login.C_Medical_Conditions_Service;
 import org.springframework.web.bind.annotation.*;
@@ -32,12 +33,12 @@ public class C_Medical_Conditions_Controller {
     }
 
     @GetMapping("/{id}")
-    public C_Medical_Conditions getMedicalConditionsById(@PathVariable Long id){
+    public C_Medical_Conditions getMedicalConditionsById(@PathVariable User id){
         return  c_medical_conditions_service.getMedicalConditionsById(id);
     }
 
     @PutMapping("/{id}")
-    public String updateMedicalConditions(@RequestBody C_Medical_Conditions updateMedicalDetail, @PathVariable Long id){
+    public String updateMedicalConditions(@RequestBody C_Medical_Conditions updateMedicalDetail, @PathVariable User id){
         c_medical_conditions_service.updateMedicalConditions(updateMedicalDetail,id);
         return "Update Family account details successfully";
     }

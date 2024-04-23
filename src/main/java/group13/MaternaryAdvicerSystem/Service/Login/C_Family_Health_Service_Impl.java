@@ -2,6 +2,7 @@ package group13.MaternaryAdvicerSystem.Service.Login;
 
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Eligible_Family_Account;
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Family_Health;
+import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Repository.Login.C_Eligible_Family_Account_Repository;
 import group13.MaternaryAdvicerSystem.Repository.Login.C_Family_Health_Repository;
 import jakarta.transaction.Transactional;
@@ -29,24 +30,31 @@ public class C_Family_Health_Service_Impl implements C_Family_Health_Service{
     }
 
     @Override
-    public C_Family_Health getFamilyHealthDetailsById(Long id) {
+    public C_Family_Health getFamilyHealthDetailsById(User id) {
         return c_family_health_repository.findById(id).orElse(null);
     }
 
     @Override
-    public boolean updateFamilyHealthDetails(C_Family_Health updateFamilyHealthInfo, Long id) {
+    public boolean updateFamilyHealthDetails(C_Family_Health updateFamilyHealthInfo, User id) {
         Optional<C_Family_Health> c_family_health_optional =  c_family_health_repository.findById(id);
         if(c_family_health_optional.isPresent()){
             C_Family_Health c_family_health_To_Update = c_family_health_optional.get();
-            c_family_health_To_Update.setGender(updateFamilyHealthInfo.getGender());
-            c_family_health_To_Update.setHypertension(updateFamilyHealthInfo.isHypertension());
-            c_family_health_To_Update.setDiabetesMellitus(updateFamilyHealthInfo.isDiabetesMellitus());
-            c_family_health_To_Update.setHeartDiseases(updateFamilyHealthInfo.isHeartDiseases());
-            c_family_health_To_Update.setNervousDisorders(updateFamilyHealthInfo.isNervousDisorders());
-            c_family_health_To_Update.setHemophilia(updateFamilyHealthInfo.isHemophilia());
-            c_family_health_To_Update.setThalassemia(updateFamilyHealthInfo.isThalassemia());
-            c_family_health_To_Update.setMentalProblems(updateFamilyHealthInfo.isMentalProblems());
-            c_family_health_To_Update.setTwins(updateFamilyHealthInfo.isTwins());
+            c_family_health_To_Update.setW_hypertension(updateFamilyHealthInfo.isW_hypertension());
+            c_family_health_To_Update.setW_diabetesMellitus(updateFamilyHealthInfo.isW_diabetesMellitus());
+            c_family_health_To_Update.setW_heartDiseases(updateFamilyHealthInfo.isW_heartDiseases());
+            c_family_health_To_Update.setW_nervousDisorders(updateFamilyHealthInfo.isW_nervousDisorders());
+            c_family_health_To_Update.setW_hemophilia(updateFamilyHealthInfo.isW_hemophilia());
+            c_family_health_To_Update.setW_thalassemia(updateFamilyHealthInfo.isW_thalassemia());
+            c_family_health_To_Update.setW_mentalProblems(updateFamilyHealthInfo.isW_mentalProblems());
+            c_family_health_To_Update.setW_twins(updateFamilyHealthInfo.isW_twins());
+            c_family_health_To_Update.setH_hypertension(updateFamilyHealthInfo.isH_hypertension());
+            c_family_health_To_Update.setH_diabetesMellitus(updateFamilyHealthInfo.isH_diabetesMellitus());
+            c_family_health_To_Update.setH_heartDiseases(updateFamilyHealthInfo.isH_heartDiseases());
+            c_family_health_To_Update.setH_nervousDisorders(updateFamilyHealthInfo.isH_nervousDisorders());
+            c_family_health_To_Update.setH_hemophilia(updateFamilyHealthInfo.isH_hemophilia());
+            c_family_health_To_Update.setH_thalassemia(updateFamilyHealthInfo.isH_thalassemia());
+            c_family_health_To_Update.setH_mentalProblems(updateFamilyHealthInfo.isH_mentalProblems());
+            c_family_health_To_Update.setH_twins(updateFamilyHealthInfo.isH_twins());
             return true;
         }
         return false;

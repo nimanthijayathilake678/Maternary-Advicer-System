@@ -1,12 +1,19 @@
 package group13.MaternaryAdvicerSystem.Model.Domain;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import group13.MaternaryAdvicerSystem.Model.UserRole;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
+import org.hibernate.annotations.CollectionId;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Getter
 @Setter
@@ -14,6 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
+@Data
 public class User {
 
     @Id
@@ -26,7 +34,7 @@ public class User {
     private String fullName;
     @Column(nullable = false)
     private String firstName;
-    // @Column(nullable = false)
+    //@Column(nullable = false)
    // private String nicNo;
     @Column(nullable = false)
     private String lastName;
@@ -48,4 +56,35 @@ public class User {
     private String password;
     @Enumerated(EnumType.STRING)
     private UserRole Position;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Personal_Info personalInfos;
+
+
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Medical_Conditions medicalInfos;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Sexual_And_Reproductive_Health sexualAndReproductiveHealths;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Family_Health familyHealths;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<C_Family_Nutrition> familyNutritions = new HashSet<>();
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Life_Style lifeStyle;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<C_Housing_And_Workspace> housingAndWorkspaces = new HashSet<>();
+
 }

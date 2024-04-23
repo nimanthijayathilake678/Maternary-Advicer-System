@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @CrossOrigin("http://localhost:3000")
-@RequestMapping("/hospitalClinicCare")
+@RequestMapping("/hospital_clinic_care")
 @RequiredArgsConstructor
 public class P_Hospital_Clinic_Care_Controller {
     private final I_P_Hospital_Care_Service pHospitalCareService;
