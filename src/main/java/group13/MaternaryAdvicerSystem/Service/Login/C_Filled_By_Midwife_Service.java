@@ -9,11 +9,11 @@ import java.util.List;
 
 
 public interface C_Filled_By_Midwife_Service {
-    public void saveFilledByMidwifeDetails(C_Filled_By_Midwife filledByMidwife);
+    public void saveFilledByMidwifeDetails(C_Filled_By_Midwife filledByMidwife,Long userId);
 
     public List<C_Filled_By_Midwife> getAllFilledByMidwifeDetails();
 
-    public C_Filled_By_Midwife getFilledByMidwifeDetailsById(Long id);
+    public C_Filled_By_Midwife getFilledByMidwifeDetailsById(Long userId);
 
-    public boolean updateFilledByMidwifeDetails(C_Filled_By_Midwife updateFilledByMidwifeDetails , Long id);
+    public boolean updateFilledByMidwifeDetails(C_Filled_By_Midwife updateFilledByMidwifeDetails ,Long userId);
 }

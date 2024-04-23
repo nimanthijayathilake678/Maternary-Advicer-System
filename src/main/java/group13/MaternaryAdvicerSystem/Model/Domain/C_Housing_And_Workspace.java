@@ -14,7 +14,8 @@ public class C_Housing_And_Workspace {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long familyNutritionId;
 
-    @ManyToOne
+    @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
 
     @Column(nullable = false)

@@ -2,6 +2,7 @@ package group13.MaternaryAdvicerSystem.Service.Login;
 
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Midwife_Remark;
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace;
+import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Repository.Login.C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Repository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,12 @@ public class C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Service_
     @Autowired
     private C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Repository c_midwife_remark_for_nutrition_lifestyle_housing_workspace_repository;
 
+    @Autowired
+    private U_Basic_Info_Service uBasicInfoService;
     @Override
-    public void saveMidwifeOtherRemark(C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace midwifeRemarkForNutritionLifestyleHousingWorkspace) {
+    public void saveMidwifeOtherRemark(C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace midwifeRemarkForNutritionLifestyleHousingWorkspace,Long userId) {
+        User user = uBasicInfoService.getUserInfoById(userId);
+        midwifeRemarkForNutritionLifestyleHousingWorkspace.setUser(user);
         c_midwife_remark_for_nutrition_lifestyle_housing_workspace_repository.save(midwifeRemarkForNutritionLifestyleHousingWorkspace);
     }
 
@@ -28,44 +33,43 @@ public class C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Service_
     }
 
     @Override
-    public C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace getMidwifeOtherRemarkById(Long id) {
-        return c_midwife_remark_for_nutrition_lifestyle_housing_workspace_repository.findById(id).orElse(null);
+    public C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace getMidwifeOtherRemarkById(Long userId) {
+        return c_midwife_remark_for_nutrition_lifestyle_housing_workspace_repository.findByUserId(userId);
     }
 
     @Override
-    public boolean updateMidwifeOtherRemarkInfo(C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace updateMidwifeOtherRemark, Long id) {
-        Optional<C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace> c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional = c_midwife_remark_for_nutrition_lifestyle_housing_workspace_repository.findById(id);
-        if(c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.isPresent()){
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update = c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.get();
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setThreeMainMealsRemarkByMidwife(updateMidwifeOtherRemark.getThreeMainMealsRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setAnimalProteinsRemarkByMidwife(updateMidwifeOtherRemark.getAnimalProteinsRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setPlantProteinsGrainsRemarkByMidwife(updateMidwifeOtherRemark.getPlantProteinsGrainsRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setVegetablesRemarkByMidwife(updateMidwifeOtherRemark.getVegetablesRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setGreensRemarkByMidwife(updateMidwifeOtherRemark.getGreensRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setFruitsRemarkByMidwife(updateMidwifeOtherRemark.getFruitsRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setHavingMealTogetherRemarkByMidwife(updateMidwifeOtherRemark.getHavingMealTogetherRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setIncludingGardenHarvestRemarkByMidwife(updateMidwifeOtherRemark.getIncludingGardenHarvestRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setTooMuchSugarRemarkByMidwife(updateMidwifeOtherRemark.getTooMuchSugarRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setTooMuchOilRemarkByMidwife(updateMidwifeOtherRemark.getTooMuchOilRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setUseCigarettesBetelLeavesTobacoRemarkByMidwife(updateMidwifeOtherRemark.getUseCigarettesBetelLeavesTobacoRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setUseLiquorRemarkByMidwife(updateMidwifeOtherRemark.getUseLiquorRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setUseDrugsRemarkByMidwife(updateMidwifeOtherRemark.getUseDrugsRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setHangoutWithSmokingPeopleRemarkByMidwife(updateMidwifeOtherRemark.getHangoutWithSmokingPeopleRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setAtmosphereNotPhysicallyMentalyAbusiveRemarkByMidwife(updateMidwifeOtherRemark.getAtmosphereNotPhysicallyMentalyAbusiveRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setDailyReligiousRitualRemarkByMidwife(updateMidwifeOtherRemark.getDailyReligiousRitualRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setRegularExerciseRemarkByMidwife(updateMidwifeOtherRemark.getRegularExerciseRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setTimeForHobbiesRemarkByMidwife(updateMidwifeOtherRemark.getTimeForHobbiesRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setExposedToChemicalRemarkByMidwife(updateMidwifeOtherRemark.getExposedToChemicalRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setExposedToLeadRemarkByMidwife(updateMidwifeOtherRemark.getExposedToLeadRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setExposedToXRayRemarkByMidwife(updateMidwifeOtherRemark.getExposedToXRayRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setHighTemperatureConditionsRemarkByMidwife(updateMidwifeOtherRemark.getHighTemperatureConditionsRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setSmokeFromCookingRemarkByMidwife(updateMidwifeOtherRemark.getSmokeFromCookingRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setNoiseEnvironmentRemarkByMidwife(updateMidwifeOtherRemark.getNoiseEnvironmentRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setFinancialManagementRemarkByMidwife(updateMidwifeOtherRemark.getFinancialManagementRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setCleanSafeWaterRemarkByMidwife(updateMidwifeOtherRemark.getCleanSafeWaterRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setToiletFacilitiesRemarkByMidwife(updateMidwifeOtherRemark.getToiletFacilitiesRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setProperWasteDispsalRemarkByMidwife(updateMidwifeOtherRemark.getProperWasteDispsalRemarkByMidwife());
-            C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_To_Update.setEnvironmentalHazardousConditionsRemarkByMidwife(updateMidwifeOtherRemark.getEnvironmentalHazardousConditionsRemarkByMidwife());
+    public boolean updateMidwifeOtherRemarkInfo(C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace updateMidwifeOtherRemark, Long userId) {
+        C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional = c_midwife_remark_for_nutrition_lifestyle_housing_workspace_repository.findByUserId(userId);
+        if(c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional!=null){
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setThreeMainMealsRemarkByMidwife(updateMidwifeOtherRemark.getThreeMainMealsRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setAnimalProteinsRemarkByMidwife(updateMidwifeOtherRemark.getAnimalProteinsRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setPlantProteinsGrainsRemarkByMidwife(updateMidwifeOtherRemark.getPlantProteinsGrainsRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setVegetablesRemarkByMidwife(updateMidwifeOtherRemark.getVegetablesRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setGreensRemarkByMidwife(updateMidwifeOtherRemark.getGreensRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setFruitsRemarkByMidwife(updateMidwifeOtherRemark.getFruitsRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setHavingMealTogetherRemarkByMidwife(updateMidwifeOtherRemark.getHavingMealTogetherRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setIncludingGardenHarvestRemarkByMidwife(updateMidwifeOtherRemark.getIncludingGardenHarvestRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setTooMuchSugarRemarkByMidwife(updateMidwifeOtherRemark.getTooMuchSugarRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setTooMuchOilRemarkByMidwife(updateMidwifeOtherRemark.getTooMuchOilRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setUseCigarettesBetelLeavesTobacoRemarkByMidwife(updateMidwifeOtherRemark.getUseCigarettesBetelLeavesTobacoRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setUseLiquorRemarkByMidwife(updateMidwifeOtherRemark.getUseLiquorRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setUseDrugsRemarkByMidwife(updateMidwifeOtherRemark.getUseDrugsRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setHangoutWithSmokingPeopleRemarkByMidwife(updateMidwifeOtherRemark.getHangoutWithSmokingPeopleRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setAtmosphereNotPhysicallyMentalyAbusiveRemarkByMidwife(updateMidwifeOtherRemark.getAtmosphereNotPhysicallyMentalyAbusiveRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setDailyReligiousRitualRemarkByMidwife(updateMidwifeOtherRemark.getDailyReligiousRitualRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setRegularExerciseRemarkByMidwife(updateMidwifeOtherRemark.getRegularExerciseRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setTimeForHobbiesRemarkByMidwife(updateMidwifeOtherRemark.getTimeForHobbiesRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setExposedToChemicalRemarkByMidwife(updateMidwifeOtherRemark.getExposedToChemicalRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setExposedToLeadRemarkByMidwife(updateMidwifeOtherRemark.getExposedToLeadRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setExposedToXRayRemarkByMidwife(updateMidwifeOtherRemark.getExposedToXRayRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setHighTemperatureConditionsRemarkByMidwife(updateMidwifeOtherRemark.getHighTemperatureConditionsRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setSmokeFromCookingRemarkByMidwife(updateMidwifeOtherRemark.getSmokeFromCookingRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setNoiseEnvironmentRemarkByMidwife(updateMidwifeOtherRemark.getNoiseEnvironmentRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setFinancialManagementRemarkByMidwife(updateMidwifeOtherRemark.getFinancialManagementRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setCleanSafeWaterRemarkByMidwife(updateMidwifeOtherRemark.getCleanSafeWaterRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setToiletFacilitiesRemarkByMidwife(updateMidwifeOtherRemark.getToiletFacilitiesRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setProperWasteDispsalRemarkByMidwife(updateMidwifeOtherRemark.getProperWasteDispsalRemarkByMidwife());
+            c_midwife_remark_for_nutrition_lifestyle_housing_workspace_optional.setEnvironmentalHazardousConditionsRemarkByMidwife(updateMidwifeOtherRemark.getEnvironmentalHazardousConditionsRemarkByMidwife());
             return true;
         }
         return false;

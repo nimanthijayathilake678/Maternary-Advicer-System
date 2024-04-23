@@ -23,20 +23,20 @@ public class C_Midwife_Remark_Controller {
     }
 
 
-    @GetMapping("/{id}")
-    public C_Midwife_Remark getMidwifeRemarkInfoById(@PathVariable Long id){
-        return  c_midwife_remark_service.getMidwifeRemarkById(id);
+    @GetMapping("/{userId}")
+    public C_Midwife_Remark getMidwifeRemarkInfoById(@PathVariable Long userId){
+        return  c_midwife_remark_service.getMidwifeRemarkById(userId);
     }
 
-    @PostMapping
-    public String saveMidwifeRemarkDetails(@RequestBody C_Midwife_Remark midwifeRemark){
-        c_midwife_remark_service.saveMidwifeRemark(midwifeRemark);
+    @PostMapping("/{userId}")
+    public String saveMidwifeRemarkDetails(@RequestBody C_Midwife_Remark midwifeRemark,@PathVariable Long userId){
+        c_midwife_remark_service.saveMidwifeRemark(midwifeRemark,userId);
         return "Add a midwife remark info";
     }
 
-    @PutMapping("/{id}")
-    public String updateMidwifeRemarkDetailsDetails(@RequestBody C_Midwife_Remark updateMidwifeRemarkDetailsDetail, @PathVariable Long id){
-        c_midwife_remark_service.updateMidwifeRemark( updateMidwifeRemarkDetailsDetail,id);
+    @PutMapping("/{userId}")
+    public String updateMidwifeRemarkDetailsDetails(@RequestBody C_Midwife_Remark updateMidwifeRemarkDetailsDetail, @PathVariable Long userId){
+        c_midwife_remark_service.updateMidwifeRemark( updateMidwifeRemarkDetailsDetail,userId);
         return "Update midwife remark successfully";
     }
 }

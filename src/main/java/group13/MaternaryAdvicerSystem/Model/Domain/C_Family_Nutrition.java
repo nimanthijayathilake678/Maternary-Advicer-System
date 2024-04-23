@@ -14,7 +14,8 @@ public class C_Family_Nutrition {
     @GeneratedValue
     private Long familyNutritionId;
 
-    @ManyToOne
+    @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
 
     @Column(nullable = false)
