@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -41,4 +42,16 @@ public class B_Basic_Info {
 
     @Column(nullable = false)
     private int B_Mother_Age;
+
+    @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
+    private List<B_Immunization> immunizationRecords;
+
+    @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
+    private List<B_Immunization_Referels> immunizationReferels;
+
+    @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
+    private List<B_NewBorn_Health> newBornHealths;
+
+    @OneToMany(mappedBy = "babyNum", cascade = CascadeType.ALL)
+    private List<B_Nutritions> nutritions;
 }

@@ -13,7 +13,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class B_Immunization_Referels {
+public class B_Growth {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
@@ -21,9 +21,8 @@ public class B_Immunization_Referels {
     @JoinColumn(name="babynum",referencedColumnName = "B_Reg_Num")
     private  B_Basic_Info babyNum;
     @Column(nullable = false)
-    private String B_Immunization_Name;
-    @Column(nullable = false)
-    private String B_Referel_Reason;
-    @Column(nullable = false)
-    private String B_Referel_Place;
+    private Date B_Weight_Date;
+    private int B_Age_For_Weight_Date;
+    private int B_Weight;
+
 }

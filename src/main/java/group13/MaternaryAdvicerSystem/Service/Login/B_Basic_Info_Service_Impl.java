@@ -123,27 +123,28 @@ public class B_Basic_Info_Service_Impl implements B_Basic_Info_Service{
         }
         return savebasicinfoDto;
     }
-    @Override
-    public List<B_Basic_Info_Dto> getBabyDetailsByFsho(String fshoname) {
-        Optional <B_Basic_Info> b_basic_info = b_basic_info_repository.findById(fshoname);
-        List<B_Basic_Info_Dto> savebasicinfoDto = new ArrayList<>();
-        if (b_basic_info.isPresent()){
-            B_Basic_Info_Dto basic_info_dto=new B_Basic_Info_Dto();
-            basic_info_dto.setB_Reg_Num(b_basic_info.get().getB_Reg_Num());
-            basic_info_dto.setB_MOH_Division(b_basic_info.get().getB_MOH_Division());
-            basic_info_dto.setB_Name(b_basic_info.get().getB_Name());
-            basic_info_dto.setB_Reg_Date(b_basic_info.get().getB_Reg_Date());
-            basic_info_dto.setB_Mother_Age(b_basic_info.get().getB_Mother_Age());
-            basic_info_dto.setB_Reg_Num(b_basic_info.get().getB_Reg_Num());
-            basic_info_dto.setB_FSHO_Division(b_basic_info.get().getB_FSHO_Division());
-            basic_info_dto.setCouple_id(b_basic_info.get().getCouple_id().getC_Reg_Num());
-            basic_info_dto.setPregnancy_id(b_basic_info.get().getPregnancy_id().getP_Reg_Num());
-            savebasicinfoDto.add(basic_info_dto);
-            return savebasicinfoDto;
-        }else {
-            throw new RuntimeException();
-        }
-    }
+//    @Override
+//    public List<B_Basic_Info_Dto> getBabyDetailsByMidwife(String fsho){
+//        Optional <B_Basic_Info> b_basic_info = b_basic_info_repository.findById(fsho);
+//        List<B_Basic_Info_Dto> savebasicinfoDto = new ArrayList<>();
+//        if (b_basic_info.isPresent()){
+//            B_Basic_Info_Dto basic_info_dto=new B_Basic_Info_Dto();
+//            basic_info_dto.setB_MOH_Division(b_basic_info.get().getB_MOH_Division());
+//            basic_info_dto.setB_Name(b_basic_info.get().getB_Name());
+//            basic_info_dto.setB_Reg_Date(b_basic_info.get().getB_Reg_Date());
+//            basic_info_dto.setB_Mother_Age(b_basic_info.get().getB_Mother_Age());
+//            basic_info_dto.setB_Reg_Num(b_basic_info.get().getB_Reg_Num());
+//            basic_info_dto.setB_FSHO_Division(b_basic_info.get().getB_FSHO_Division());
+//            basic_info_dto.setCouple_id(b_basic_info.get().getCouple_id().getC_Reg_Num());
+//            basic_info_dto.setPregnancy_id(b_basic_info.get().getPregnancy_id().getP_Reg_Num());
+//            savebasicinfoDto.add(basic_info_dto);
+//            return savebasicinfoDto;
+//        }else {
+//            throw new RuntimeException();
+//        }
+//    }
+
+
 
 
 }

@@ -13,17 +13,20 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class B_Immunization_Referels {
+public class SpecialMsg {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     @ManyToOne
-    @JoinColumn(name="babynum",referencedColumnName = "B_Reg_Num")
+    @JoinColumn(name="babyNum",referencedColumnName = "B_Reg_Num")
     private  B_Basic_Info babyNum;
     @Column(nullable = false)
-    private String B_Immunization_Name;
+    private String Msg_Priority;
     @Column(nullable = false)
-    private String B_Referel_Reason;
+    private String Msg_Topic;
     @Column(nullable = false)
-    private String B_Referel_Place;
+    private String Msg_Content;
+    @Column(nullable = false)
+    private Date Msg_Date;
 }
+

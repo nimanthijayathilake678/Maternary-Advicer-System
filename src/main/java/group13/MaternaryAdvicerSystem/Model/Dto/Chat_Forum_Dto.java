@@ -1,6 +1,7 @@
 package group13.MaternaryAdvicerSystem.Model.Dto;
-
 import java.util.Date;
+
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Save_BabyNutrients_Dto {
-    private String babynum;
-    private Date nutrientDate;
-    private String nutrientBatchNo;
-    private int ageForNutrientDate;
-    private String nutrientName;
+public class Chat_Forum_Dto {
+    private  String regNum;
+
+    private Date msg_Date;
+
+    private String msg_Content;
 }

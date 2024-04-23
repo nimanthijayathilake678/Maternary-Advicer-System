@@ -41,9 +41,8 @@ public class B_Basic_Info_Controller {
     public List<B_Basic_Info_Dto> getBabyDetailsByCoupleNum (@PathVariable String coupleNum){
         return b_basic_info_service.getBabyDetailsByCoupleNum(coupleNum);
     }
-
-    @GetMapping("/getbabyInfoByFsho/{fshoname}")
-    public List<B_Basic_Info_Dto> getBabyDetailsByFsho(@PathVariable String fshoname){
-        return b_basic_info_service.getBabyDetailsByFsho(fshoname);
-    }
+//    @GetMapping("/getbabyInfoMidwife/{fshoname}")
+//    public List<B_Basic_Info_Dto>  getBabyDetailsByMidwife(@PathVariable String fshoname){
+//        return b_basic_info_service.getBabyDetailsByMidwife(fshoname);
+//    }
 }

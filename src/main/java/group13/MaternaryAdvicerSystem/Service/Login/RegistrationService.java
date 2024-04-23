@@ -3,7 +3,6 @@ package group13.MaternaryAdvicerSystem.Service.Login;
 import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Model.UserRole;
 import group13.MaternaryAdvicerSystem.Repository.Login.UserRepository;
-import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,7 +24,8 @@ public class RegistrationService {
         user.setLastName(userdto.getLastName());
         user.setFullName(userdto.getFullName());
         user.setUsername(userdto.getUsername());
-        user.setNic(userdto.getNic());
+       // user.setRegNum(userdto.getNicNo());
+        user.setRegNum(userdto.getRegNum());
         user.setPassword(getEncodedPassword(userdto.getPassword()));
         user.setPosition(userdto.getPosition());
         user.setId(userdto.getId());
@@ -46,7 +46,7 @@ public class RegistrationService {
         family.setFullName("Family fullname");
         family.setLastName("Family lastname");
         family.setPosition(UserRole.Family);
-        family.setNic("999574383");
+        family.setRegNum("C123456");
         family.setUsername("Family123");
         family.setPassword(getEncodedPassword("Family@123"));
         family.setArea("Mathara");
@@ -63,7 +63,7 @@ public class RegistrationService {
         moh.setFullName("moh fullname");
         moh.setLastName("moh lastname");
         moh.setPosition(UserRole.MOH);
-        moh.setNic("748393922");
+        moh.setRegNum("MO001");
         moh.setUsername("Moh123");
         moh.setPassword(getEncodedPassword("Moh@123"));
         moh.setArea("Mathara");
@@ -80,7 +80,7 @@ public class RegistrationService {
         midwife.setFullName("midwife fullname");
         midwife.setLastName("midwife lastname");
         midwife.setPosition(UserRole.Midwife);
-        midwife.setNic("789939w22");
+        midwife.setRegNum("MD00001");
         midwife.setUsername("Midwife123");
         midwife.setPassword(getEncodedPassword("Midwife@123"));
         midwife.setArea("Akurassa");

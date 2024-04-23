@@ -1,9 +1,6 @@
 package group13.MaternaryAdvicerSystem.Model.Domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -17,32 +14,32 @@ import java.time.LocalDate;
 @Table(name = "p_hospital_clinic_care")
 public class P_Hospital_Clinic_Care {
     @Id
-    @Column(nullable = false)
-    private String ID;
-    
-    @Column(nullable = false)
-    private String POA;
-    private String Urine;
-    private String Oedema;
-    private String BloodPressure;
-    private String FundalHeight;
-    private String FoetalLie;
-    private String Presentation;
-    private String FM;
-    private String FHS;
-    private String EBW;
-    private String CRL;
-    private String GestSac;
-    private String BPD;
-    private String HC;
-    private String AC;
-    private String FL;
-    private String Liqour;
-    private LocalDate Placenta;
-    private String AveragePOA;
-    private String AnyOther;
-    private LocalDate NextVisitDate;
-    private String DoctorId;
-    private String Designation;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String pregnancyId;
+    private String eligibleId;
+    private String poa;
+    private String urine;
+    private String oedema;
+    private String bloodpressure;
+    private String fundalheight;
+    private String foetalLie;
+    private String presentation;
+    private String fM;
+    private String fhs;
+    private String ebw;
+    private String crl;
+    private String gestsac;
+    private String bpd;
+    private String hc;
+    private String ac;
+    private String fl;
+    private String liqour;
+    private String placenta;
+    private String averagepoa;
+    private String anyother;
+    private LocalDate nextvisitdate;
+    private String doctorid;
+    private String designation;
 
 }

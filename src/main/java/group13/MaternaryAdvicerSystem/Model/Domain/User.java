@@ -3,8 +3,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import group13.MaternaryAdvicerSystem.Model.UserRole;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
+
 import lombok.*;
 import org.hibernate.annotations.CollectionId;
 import org.springframework.cglib.core.Local;
@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 
 @Getter
 @Setter
@@ -28,11 +29,13 @@ public class User {
    //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(nullable = false)
-    private String nic;
+    private String regNum;
     @Column(nullable = false)
     private String fullName;
     @Column(nullable = false)
     private String firstName;
+    //@Column(nullable = false)
+   // private String nicNo;
     @Column(nullable = false)
     private String lastName;
     @Column(nullable = false)
