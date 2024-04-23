@@ -23,6 +23,8 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
     private String getEncodedPassword(String password) {
         return passwordEncoder.encode(password);
     }
+
+
     public void saveuser(UserRegisterDTO user){
         User user_basic_info=new User();
         //user_basic_info.setId(user.getId());
@@ -34,6 +36,8 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
         user_basic_info.setEmail(user.getEmail());
         user_basic_info.setFirstName(user.getFirstName());
         user_basic_info.setLastName(user.getLastName());
+        user_basic_info.setLastName(user.getLastName());
+        user_basic_info.setGender(user.getGender());
         user_basic_info.setFullName(user.getFullName());
         user_basic_info.setUsername(user.getUsername());
         user_basic_info.setPassword(getEncodedPassword(user.getPassword()));
@@ -46,6 +50,9 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
 
         U_Basic_Info_Repository.save(user_basic_info);
     }
+
+
+
 
     @Override
     public List<User> getAllUserInformation() {
