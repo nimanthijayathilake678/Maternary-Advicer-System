@@ -11,7 +11,7 @@ public interface C_Sexual_And_Reproductive_Health_Service {
 
     public List<C_Sexual_And_Reproductive_Health> getAllSexualAndReproductiveHealthDetails();
 
-    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveHealthDetailsById(User id);
+    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveHealthDetailsById(Long id);
 
-    public boolean updateSexualAndReproductiveHealthDetails(C_Sexual_And_Reproductive_Health updatesexualAndReproductiveHealth , User id);
+    public boolean updateSexualAndReproductiveHealthDetails(C_Sexual_And_Reproductive_Health updatesexualAndReproductiveHealth , Long id);
 }

@@ -9,9 +9,9 @@ import java.util.List;
 public interface C_Personal_Info_Service {
 //    public void savePersonalInfo(C_Personal_Info c_personal_info);
     public List<C_Personal_Info> getAllPersonalInformation();
-    public void savePersonalInfo(C_Personal_Info c_personal_info);
+    public void savePersonalInfo(C_Personal_Info c_personal_info,Long userId);
 
-    public C_Personal_Info getPersonalInfoById(Long id);
+    public C_Personal_Info getPersonalInfoById(Long userId);
 
-    public boolean updatePersonalInfo(C_Personal_Info updatePersonalInfoDetails , Long id);
+    public boolean updatePersonalInfo(C_Personal_Info updatePersonalInfoDetails , Long userId);
 }

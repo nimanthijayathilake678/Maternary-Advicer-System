@@ -15,7 +15,10 @@ import java.util.Optional;
 @Transactional
 public class C_Personal_Info_Service_Impl implements C_Personal_Info_Service {
     @Autowired
-    C_Personal_Info_Repository c_personal_info_repository;
+    private C_Personal_Info_Repository c_personal_info_repository;
+
+    @Autowired
+    private U_Basic_Info_Service uBasicInfoService;
 
     @Override
     public List<C_Personal_Info> getAllPersonalInformation() {
@@ -47,7 +50,9 @@ public class C_Personal_Info_Service_Impl implements C_Personal_Info_Service {
     }
 
     @Override
-    public void savePersonalInfo(C_Personal_Info c_personal_info) {
+    public void savePersonalInfo(C_Personal_Info c_personal_info,Long userId) {
+        User  user = uBasicInfoService.getUserInfoById(userId);
+        c_personal_info.setUser(user);
         c_personal_info_repository.save(c_personal_info);
     }
 

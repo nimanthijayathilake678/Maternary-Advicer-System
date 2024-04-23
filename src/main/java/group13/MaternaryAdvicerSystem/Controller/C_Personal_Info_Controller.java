@@ -26,20 +26,20 @@ public class C_Personal_Info_Controller {
     }
 
 
-    @GetMapping("/{id}")
-    public C_Personal_Info getPesonalInformationById(@PathVariable Long id){
-        return  c_personal_info_service.getPersonalInfoById(id);
+    @GetMapping("/{userId}")
+    public C_Personal_Info getPesonalInformationById(@PathVariable Long userId){
+        return  c_personal_info_service.getPersonalInfoById(userId);
     }
 
-    @PostMapping
-    public String saveInfoDetails(@RequestBody C_Personal_Info personalInfo){
-        c_personal_info_service.savePersonalInfo(personalInfo);
+    @PostMapping("/{userId}")
+    public String saveInfoDetails(@RequestBody C_Personal_Info personalInfo,@PathVariable Long userId){
+        c_personal_info_service.savePersonalInfo(personalInfo, userId);
         return "Add a personal info";
     }
 
-    @PutMapping("/{id}")
-    public String updatePersonalDetails(@RequestBody C_Personal_Info updatePersonalDetail, @PathVariable Long id){
-        boolean updated = c_personal_info_service.updatePersonalInfo( updatePersonalDetail,id);
+    @PutMapping("/{userId}")
+    public String updatePersonalDetails(@RequestBody C_Personal_Info updatePersonalDetail, @PathVariable Long userId){
+        boolean updated = c_personal_info_service.updatePersonalInfo( updatePersonalDetail,userId);
         if(updated){
             return "Update Family account details successfully";
         }

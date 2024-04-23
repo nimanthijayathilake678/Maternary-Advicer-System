@@ -21,9 +21,9 @@ public class C_Medical_Conditions_Controller {
         this.c_medical_conditions_service = c_medical_conditions_service;
     }
 
-    @PostMapping
-    public String saveMedicalInfo(@RequestBody C_Medical_Conditions medicalConditions){
-        c_medical_conditions_service.saveMedicalConditions(medicalConditions);
+    @PostMapping("/{userId}")
+    public String saveMedicalInfo(@RequestBody C_Medical_Conditions medicalConditions,@PathVariable Long userId){
+        c_medical_conditions_service.saveMedicalConditions(medicalConditions,userId);
         return "Add medical conditions";
     }
 
@@ -32,14 +32,14 @@ public class C_Medical_Conditions_Controller {
         return c_medical_conditions_service.getAllCoupleMedicalConditions();
     }
 
-    @GetMapping("/{id}")
-    public C_Medical_Conditions getMedicalConditionsById(@PathVariable User id){
-        return  c_medical_conditions_service.getMedicalConditionsById(id);
+    @GetMapping("/{userId}")
+    public C_Medical_Conditions getMedicalConditionsById(@PathVariable Long userId){
+        return  c_medical_conditions_service.getMedicalConditionsById(userId);
     }
 
-    @PutMapping("/{id}")
-    public String updateMedicalConditions(@RequestBody C_Medical_Conditions updateMedicalDetail, @PathVariable User id){
-        c_medical_conditions_service.updateMedicalConditions(updateMedicalDetail,id);
+    @PutMapping("/{userId}")
+    public String updateMedicalConditions(@RequestBody C_Medical_Conditions updateMedicalDetail, @PathVariable Long userId){
+        c_medical_conditions_service.updateMedicalConditions(updateMedicalDetail,userId);
         return "Update Family account details successfully";
     }
 }

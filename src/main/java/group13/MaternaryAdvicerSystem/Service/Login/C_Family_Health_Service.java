@@ -10,7 +10,7 @@ public interface C_Family_Health_Service {
     public void saveFamilyHealth(C_Family_Health c_family_health);
     public List<C_Family_Health> getAllFamilyHealthDetails();
 
-    public C_Family_Health getFamilyHealthDetailsById(User id);
+    public C_Family_Health getFamilyHealthDetailsById(Long id);
 
-    public boolean updateFamilyHealthDetails(C_Family_Health updateFamilyHealthInfo , User id);
+    public boolean updateFamilyHealthDetails(C_Family_Health updateFamilyHealthInfo , Long id);
 }

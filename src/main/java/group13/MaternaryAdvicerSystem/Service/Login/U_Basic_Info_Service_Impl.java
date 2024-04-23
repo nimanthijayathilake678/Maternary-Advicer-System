@@ -1,6 +1,7 @@
 package group13.MaternaryAdvicerSystem.Service.Login;
 import group13.MaternaryAdvicerSystem.Model.Domain.*;
 import group13.MaternaryAdvicerSystem.Model.Dto.UserRegisterDTO;
+import group13.MaternaryAdvicerSystem.Model.UserRole;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import group13.MaternaryAdvicerSystem.Repository.Login.UserRegisterRepository;
@@ -72,6 +73,7 @@ public class U_Basic_Info_Service_Impl implements U_Basic_Info_Service{
             user_To_Update.setArea(updateUserlInfoDetails.getArea());
             user_To_Update.setUsername(updateUserlInfoDetails.getUsername());
             user_To_Update.setPassword(updateUserlInfoDetails.getPassword());
+            user_To_Update.setFamilyFlag(updateUserlInfoDetails.isFamilyFlag());
             return true;
         }
         return false;
