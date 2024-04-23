@@ -14,6 +14,9 @@ public class C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long othermidwifeRemarkNo;
 
+    @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
+    private User user;
 
     @Column(nullable = false)
     private String threeMainMealsRemarkByMidwife;

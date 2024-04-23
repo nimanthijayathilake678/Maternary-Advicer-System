@@ -16,6 +16,10 @@ public class C_Midwife_Remark {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long midwifeRemarkNo;
 
+    @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
+    private User user;
+
     @Column(nullable = false)
     private String mohRemarkByMidwife;
 

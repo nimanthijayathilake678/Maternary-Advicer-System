@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/othermidwifeRemark")
 public class C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Controller {
@@ -18,9 +19,9 @@ public class C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Controll
         this.c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service = c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service;
     }
 
-    @PostMapping
-    public String saveMidwifeOtherInfo(@RequestBody C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace otherRemark){
-        c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service.saveMidwifeOtherRemark(otherRemark);
+    @PostMapping("/{userId}")
+    public String saveMidwifeOtherInfo(@RequestBody C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace otherRemark,@PathVariable Long userId){
+        c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service.saveMidwifeOtherRemark(otherRemark,userId);
         return "Add a midwife other remarks details";
     }
 
@@ -29,14 +30,14 @@ public class C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Controll
         return c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service.getAllMidwifeOtherRemark();
     }
 
-    @GetMapping("/{id}")
-    public C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace getMidwifeOtherRemarkInfoById(@PathVariable Long id){
-        return  c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service.getMidwifeOtherRemarkById(id);
+    @GetMapping("/{userId}")
+    public C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace getMidwifeOtherRemarkInfoById(@PathVariable Long userId){
+        return  c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service.getMidwifeOtherRemarkById(userId);
     }
 
-    @PutMapping("/{id}")
-    public String updateMidwifeOtherRemarkDetailsDetails(@RequestBody C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace updateMidwifeOtherRemarkDetailsDetail, @PathVariable Long id){
-        c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service.updateMidwifeOtherRemarkInfo( updateMidwifeOtherRemarkDetailsDetail,id);
+    @PutMapping("/{userId}")
+    public String updateMidwifeOtherRemarkDetailsDetails(@RequestBody C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace updateMidwifeOtherRemarkDetailsDetail, @PathVariable Long userId){
+        c_midwife_remark_for_nutrition_lifestyle_housing_workspace_service.updateMidwifeOtherRemarkInfo( updateMidwifeOtherRemarkDetailsDetail,userId);
         return "Update midwife other remark successfully";
     }
 
