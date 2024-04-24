@@ -15,6 +15,7 @@ public class C_Family_Health {
     private Long familyHealthId;
 
     @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
 
     @Column(nullable = false)

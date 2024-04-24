@@ -77,15 +77,17 @@ public class User {
     private C_Family_Health familyHealths;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user")
-    private Set<C_Family_Nutrition> familyNutritions = new HashSet<>();
-
+    @OneToOne(mappedBy = "user")
+    private C_Family_Nutrition familyNutritions;
     @JsonIgnore
     @OneToOne(mappedBy = "user")
     private C_Life_Style lifeStyle;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user")
-    private Set<C_Housing_And_Workspace> housingAndWorkspaces = new HashSet<>();
+    @OneToOne(mappedBy = "user")
+    private C_Housing_And_Workspace housingAndWorkspaces ;
 
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Midwife_Remark cMidwifeRemark;
 }
