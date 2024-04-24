@@ -19,6 +19,7 @@ public class C_Midwife_Remark {
     @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
 
+
     private String registrationRemarkByMidwife;
     private String mohRemarkByMidwife;
     private String phmRemarkByMidwife;

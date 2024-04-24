@@ -15,5 +15,7 @@ public interface C_Filled_By_Midwife_Service {
 
     public C_Filled_By_Midwife getFilledByMidwifeDetailsById(Long userId);
 
-    public boolean updateFilledByMidwifeDetails(C_Filled_By_Midwife updateFilledByMidwifeDetails , Long userId);
+
+    public boolean updateFilledByMidwifeDetails(C_Filled_By_Midwife updateFilledByMidwifeDetails ,Long userId);
+
 }

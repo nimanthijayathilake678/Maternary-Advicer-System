@@ -79,6 +79,7 @@ public class User {
     @JsonIgnore
     @OneToOne(mappedBy = "user")
     private C_Family_Nutrition familyNutritions;
+
     @JsonIgnore
     @OneToOne(mappedBy = "user")
     private C_Life_Style lifeStyle;
@@ -89,9 +90,14 @@ public class User {
 
     @JsonIgnore
     @OneToOne(mappedBy = "user")
-    private C_Midwife_Remark cMidwifeRemark;
+    private C_Midwife_Remark midwifeRemark;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace c_midwife_remark_for_nutrition_lifestyle_housing_workspace;
 
     @JsonIgnore
     @OneToOne(mappedBy = "user")
     private C_Filled_By_Midwife cFilledByMidwife;
+
 }

@@ -1,7 +1,9 @@
 package group13.MaternaryAdvicerSystem.Repository.Login;
 
+import group13.MaternaryAdvicerSystem.Model.Domain.C_Basic_Info;
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace_Repository extends JpaRepository<C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace, Long> {
+    C_Midwife_Remark_For_Nutrition_Lifestyle_Housing_Workspace findByUserId(Long userId);
 }
