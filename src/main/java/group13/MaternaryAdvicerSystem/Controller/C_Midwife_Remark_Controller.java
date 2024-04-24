@@ -29,7 +29,7 @@ public class C_Midwife_Remark_Controller {
     }
 
     @PostMapping("/{userId}")
-    public String saveMidwifeRemarkDetails(@RequestBody C_Midwife_Remark midwifeRemark,@PathVariable Long userId){
+    public String saveMidwifeRemarkDetails(@RequestBody C_Midwife_Remark midwifeRemark,@PathVariable  Long userId){
         c_midwife_remark_service.saveMidwifeRemark(midwifeRemark,userId);
         return "Add a midwife remark info";
     }

@@ -15,11 +15,12 @@ import java.util.Optional;
 public class C_Midwife_Remark_Service_Iml implements C_Midwife_Remark_Service {
     @Autowired
     private C_Midwife_Remark_Repository c_midwife_remark_repository;
+
     @Autowired
-    private  U_Basic_Info_Service uBasicInfoService;
+    private U_Basic_Info_Service uBasicInfoService;
 
     @Override
-    public void saveMidwifeRemark(C_Midwife_Remark midwife_remark, Long userId) {
+    public void saveMidwifeRemark(C_Midwife_Remark midwife_remark,Long userId) {
         User user = uBasicInfoService.getUserInfoById(userId);
         midwife_remark.setUser(user);
         c_midwife_remark_repository.save(midwife_remark);
@@ -37,7 +38,7 @@ public class C_Midwife_Remark_Service_Iml implements C_Midwife_Remark_Service {
 
     @Override
     public boolean updateMidwifeRemark(C_Midwife_Remark updateMidwifeRemark, Long userId) {
-        C_Midwife_Remark c_midwife_remark_optional = c_midwife_remark_repository.findByUserId(userId);
+       C_Midwife_Remark c_midwife_remark_optional = c_midwife_remark_repository.findByUserId(userId);
         if(c_midwife_remark_optional!=null){
             c_midwife_remark_optional.setMohRemarkByMidwife(updateMidwifeRemark.getMohRemarkByMidwife());
             c_midwife_remark_optional.setPhmRemarkByMidwife(updateMidwifeRemark.getPhmRemarkByMidwife());

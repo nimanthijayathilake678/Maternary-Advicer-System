@@ -100,5 +100,4 @@ public class User {
     @OneToOne(mappedBy = "user")
     private C_Filled_By_Midwife cFilledByMidwife;
 
-
 }

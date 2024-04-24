@@ -15,6 +15,7 @@ public class C_Sexual_And_Reproductive_Health {
     private Long sexualAndReproductiveId;
 
     @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
 
 
