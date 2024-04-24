@@ -90,4 +90,8 @@ public class User {
     @JsonIgnore
     @OneToOne(mappedBy = "user")
     private C_Midwife_Remark cMidwifeRemark;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private C_Filled_By_Midwife cFilledByMidwife;
 }

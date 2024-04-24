@@ -17,29 +17,33 @@ public class C_Filled_By_Midwife {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long filledByAreaNo;
 
-    @ManyToOne
-    private C_Eligible_Family_Account accountNo;
+    @OneToOne
+    @JoinColumn(name = "user_id" , referencedColumnName ="id" )
+    private User user;
+
 
     @Column(nullable = false)
-    private String gender;
+    private Float w_weight;
 
     @Column(nullable = false)
-    private Float weight;
+    private Float w_height;
 
     @Column(nullable = false)
-    private Float height;
+    private String w_bloodType;
 
     @Column(nullable = false)
-    private String bloodType;
+    private float w_hemoglobinValue;
 
     @Column(nullable = false)
-    private float hemoglobinValue;
+    private Float h_weight;
 
-    @OneToMany(mappedBy = "cFilledByMidwifeNo")
-    private Set<C_Special_Cases_Identified_By_Midwife> specialCasesIdentifiedByMidwives  = new HashSet<>();
+    @Column(nullable = false)
+    private Float h_height;
 
-    @OneToMany(mappedBy = "cFilledByMidwifeNo")
-    private Set<C_Counselling_Session_By_Midwife> cCounsellingSessionByMidwives  = new HashSet<>();
+    @Column(nullable = false)
+    private String h_bloodType;
 
+    @Column(nullable = false)
+    private float h_hemoglobinValue;
 }
 

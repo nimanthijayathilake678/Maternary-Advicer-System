@@ -40,6 +40,7 @@ public class C_Midwife_Remark_Service_Iml implements C_Midwife_Remark_Service {
     public boolean updateMidwifeRemark(C_Midwife_Remark updateMidwifeRemark, Long userId) {
        C_Midwife_Remark c_midwife_remark_optional = c_midwife_remark_repository.findByUserId(userId);
         if(c_midwife_remark_optional!=null){
+            c_midwife_remark_optional.setRegistrationRemarkByMidwife(updateMidwifeRemark.getRegistrationRemarkByMidwife());
             c_midwife_remark_optional.setMohRemarkByMidwife(updateMidwifeRemark.getMohRemarkByMidwife());
             c_midwife_remark_optional.setPhmRemarkByMidwife(updateMidwifeRemark.getPhmRemarkByMidwife());
             c_midwife_remark_optional.setWifeNameRemarkByMidwife(updateMidwifeRemark.getWifeNameRemarkByMidwife());

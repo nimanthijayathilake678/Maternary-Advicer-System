@@ -18,9 +18,9 @@ public class C_Filled_By_Controller {
         this.c_filled_by_midwife_service = c_filled_by_midwife_service;
     }
 
-    @PostMapping
-    public String saveFilledByMidwifeInfo(@RequestBody C_Filled_By_Midwife cFilledByMidwife){
-        c_filled_by_midwife_service.saveFilledByMidwifeDetails(cFilledByMidwife);
+    @PostMapping("/{userId}")
+    public String saveFilledByMidwifeInfo(@RequestBody C_Filled_By_Midwife cFilledByMidwife,@PathVariable Long userId){
+        c_filled_by_midwife_service.saveFilledByMidwifeDetails(cFilledByMidwife,userId);
         return "Save filled by midwife details";
     }
 
@@ -29,14 +29,14 @@ public class C_Filled_By_Controller {
         return c_filled_by_midwife_service.getAllFilledByMidwifeDetails();
     }
 
-    @GetMapping("/{id}")
-    public C_Filled_By_Midwife getFilledByMidwifeInfoById(@PathVariable Long id){
-        return  c_filled_by_midwife_service.getFilledByMidwifeDetailsById(id);
+    @GetMapping("/{userId}")
+    public C_Filled_By_Midwife getFilledByMidwifeInfoById(@PathVariable Long userId){
+        return  c_filled_by_midwife_service.getFilledByMidwifeDetailsById(userId);
     }
 
-    @PutMapping("/{id}")
-    public String updateFilledByMidwifeInfoInfos(@RequestBody C_Filled_By_Midwife updateFilledByMidwifeDetail, @PathVariable Long id){
-        c_filled_by_midwife_service.updateFilledByMidwifeDetails(updateFilledByMidwifeDetail,id);
+    @PutMapping("/{userId}")
+    public String updateFilledByMidwifeInfoInfos(@RequestBody C_Filled_By_Midwife updateFilledByMidwifeDetail, @PathVariable Long userId){
+        c_filled_by_midwife_service.updateFilledByMidwifeDetails(updateFilledByMidwifeDetail, userId);
         return "Update filled by midwife details successfully";
     }
 }
