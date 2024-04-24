@@ -18,6 +18,7 @@ public class C_Family_Nutrition {
     @JoinColumn(name = "user_id" , referencedColumnName ="id" )
     private User user;
 
+
     @Column(nullable = false)
     private boolean w_threeMainMeals;
 

@@ -21,9 +21,9 @@ public class C_Family_Health_Service_Controller {
     }
 
 
-    @PostMapping
-    public String addFamilyHealth(@RequestBody C_Family_Health familyHealth){
-        c_family_health_service.saveFamilyHealth(familyHealth);
+    @PostMapping("/{userId}")
+    public String addFamilyHealth(@RequestBody C_Family_Health familyHealth,@PathVariable  Long userId){
+        c_family_health_service.saveFamilyHealth(familyHealth,userId);
         return "Add a couple family health";
     }
 
@@ -32,14 +32,14 @@ public class C_Family_Health_Service_Controller {
         return c_family_health_service.getAllFamilyHealthDetails();
     }
 
-    @GetMapping("/{id}")
-    public C_Family_Health getRegisteredFamilyHealthById(@PathVariable Long id){
-        return  c_family_health_service.getFamilyHealthDetailsById(id);
+    @GetMapping("/{userId}")
+    public C_Family_Health getRegisteredFamilyHealthById(@PathVariable Long userId){
+        return  c_family_health_service.getFamilyHealthDetailsById(userId);
     }
 
-    @PutMapping("/{id}")
-    public String updateFamilyHealthInfo(@RequestBody C_Family_Health updateFamilyHealthDetail, @PathVariable Long id){
-        c_family_health_service.updateFamilyHealthDetails(updateFamilyHealthDetail,id);
+    @PutMapping("/{userId}")
+    public String updateFamilyHealthInfo(@RequestBody C_Family_Health updateFamilyHealthDetail, @PathVariable Long userId){
+        c_family_health_service.updateFamilyHealthDetails(updateFamilyHealthDetail,userId);
         return "Update Family Health details successfully";
     }
 

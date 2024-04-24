@@ -2,6 +2,7 @@ package group13.MaternaryAdvicerSystem.Service.Login;
 
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Eligible_Family_Account;
 import group13.MaternaryAdvicerSystem.Model.Domain.C_Family_Nutrition;
+import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Repository.Login.C_Eligible_Family_Account_Repository;
 import group13.MaternaryAdvicerSystem.Repository.Login.C_Family_Nutrition_Repository;
 import jakarta.transaction.Transactional;
@@ -16,8 +17,13 @@ import java.util.Optional;
 public class C_Family_Nutrition_Serivice_Impl implements C_Family_Nutrition_Service{
     @Autowired
     C_Family_Nutrition_Repository c_family_nutrition_repository;
+
+    @Autowired
+    private  U_Basic_Info_Service uBasicInfoService;
     @Override
-    public void saveFamilyNutrition(C_Family_Nutrition family_nutrition) {
+    public void saveFamilyNutrition(C_Family_Nutrition family_nutrition,Long userId) {
+        User user = uBasicInfoService.getUserInfoById(userId);
+        family_nutrition.setUser(user);
         c_family_nutrition_repository.save(family_nutrition);
     }
 

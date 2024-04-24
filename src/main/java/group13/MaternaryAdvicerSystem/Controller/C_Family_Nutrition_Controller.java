@@ -20,9 +20,9 @@ public class C_Family_Nutrition_Controller {
         this.c_family_nutrition_service = c_family_nutrition_service;
     }
 
-    @PostMapping
-    public String saveFamilyNutritionDetails(@RequestBody C_Family_Nutrition familyNutrition){
-        c_family_nutrition_service.saveFamilyNutrition(familyNutrition);
+    @PostMapping("/{userId}")
+    public String saveFamilyNutritionDetails(@RequestBody C_Family_Nutrition familyNutrition, @PathVariable Long userId){
+        c_family_nutrition_service.saveFamilyNutrition(familyNutrition,userId);
         return "Add a family nutrition details";
     }
 
@@ -31,14 +31,14 @@ public class C_Family_Nutrition_Controller {
         return c_family_nutrition_service.getAllCoupleFamilyNutrition();
     }
 
-    @GetMapping("/{id}")
-    public C_Family_Nutrition getFamilyNutritionInfosById(@PathVariable Long id){
-        return  c_family_nutrition_service.getFamilyNutritionById(id);
+    @GetMapping("/{userId}")
+    public C_Family_Nutrition getFamilyNutritionInfosById(@PathVariable Long userId){
+        return  c_family_nutrition_service.getFamilyNutritionById(userId);
     }
 
-    @PutMapping("/{id}")
-    public String updateFamilyNutritionInfos(@RequestBody C_Family_Nutrition updateFamilyNutritionDetail, @PathVariable Long id){
-        c_family_nutrition_service.updateFamilyNutrition(updateFamilyNutritionDetail,id);
+    @PutMapping("/{userId}")
+    public String updateFamilyNutritionInfos(@RequestBody C_Family_Nutrition updateFamilyNutritionDetail, @PathVariable Long userId){
+        c_family_nutrition_service.updateFamilyNutrition(updateFamilyNutritionDetail,userId);
         return "Update Family account details successfully";
     }
 }

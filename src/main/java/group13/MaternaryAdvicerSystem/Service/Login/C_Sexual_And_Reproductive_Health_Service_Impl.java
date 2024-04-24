@@ -20,8 +20,12 @@ public class C_Sexual_And_Reproductive_Health_Service_Impl implements C_Sexual_A
     @Autowired
     C_Sexual_And_Reproductive_Health_Repository c_sexual_and_reproductive_health_repository;
 
+    @Autowired
+    private U_Basic_Info_Service uBasicInfoService;
     @Override
-    public void saveSexualAndReproductiveHealthDetails(C_Sexual_And_Reproductive_Health sexualAndReproductiveHealth) {
+    public void saveSexualAndReproductiveHealthDetails(C_Sexual_And_Reproductive_Health sexualAndReproductiveHealth,Long userId) {
+        User user = uBasicInfoService.getUserInfoById(userId);
+        sexualAndReproductiveHealth.setUser(user);
         c_sexual_and_reproductive_health_repository.save(sexualAndReproductiveHealth);
     }
 

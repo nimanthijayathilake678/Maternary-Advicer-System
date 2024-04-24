@@ -20,6 +20,7 @@ public class C_Filled_By_Midwife_Service_Impl implements C_Filled_By_Midwife_Ser
     @Autowired
     private U_Basic_Info_Service uBasicInfoService;
 
+
     @Override
     public void saveFilledByMidwifeDetails(C_Filled_By_Midwife filledByMidwife,Long userId) {
         User user = uBasicInfoService.getUserInfoById(userId);
@@ -42,9 +43,13 @@ public class C_Filled_By_Midwife_Service_Impl implements C_Filled_By_Midwife_Ser
         C_Filled_By_Midwife c_filled_by_midwife_optional = c_filled_by_midwife_repository.findByUserId(userId);
         if(c_filled_by_midwife_optional!=null){
             c_filled_by_midwife_optional.setW_weight(updateFilledByMidwifeDetails.getW_weight());
-            c_filled_by_midwife_optional.setW_height(updateFilledByMidwifeDetails.getW_height());
+           c_filled_by_midwife_optional.setW_height(updateFilledByMidwifeDetails.getW_height());
             c_filled_by_midwife_optional.setW_bloodType(updateFilledByMidwifeDetails.getW_bloodType());
             c_filled_by_midwife_optional.setW_hemoglobinValue(updateFilledByMidwifeDetails.getW_hemoglobinValue());
+            c_filled_by_midwife_optional.setH_weight(updateFilledByMidwifeDetails.getH_weight());
+            c_filled_by_midwife_optional.setH_bloodType(updateFilledByMidwifeDetails.getH_bloodType());
+            c_filled_by_midwife_optional.setH_hemoglobinValue(updateFilledByMidwifeDetails.getH_hemoglobinValue());
+            c_filled_by_midwife_optional.setH_height(updateFilledByMidwifeDetails.getH_height());
             return true;
         }
         return false;
