@@ -43,13 +43,8 @@ public class C_Filled_By_Midwife {
     @Column(nullable = false)
     private String h_bloodType;
 
+
     @Column(nullable = false)
     private float h_hemoglobinValue;
-
-    @Column(nullable = false)
-    private String specialCases;
-
-
-
 }
 

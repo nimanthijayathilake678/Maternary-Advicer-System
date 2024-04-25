@@ -61,8 +61,4 @@ public class C_Eligible_Family_Account {
 //    private Set<C_Housing_And_Workspace> housingAndWorkspaces = new HashSet<>();
 
 
-
-
-
-
 }

@@ -18,8 +18,13 @@ public class C_Family_Health_Service_Impl implements C_Family_Health_Service{
     @Autowired
     C_Family_Health_Repository c_family_health_repository;
 
+    @Autowired
+    private U_Basic_Info_Service uBasicInfoService;
+
     @Override
-    public void saveFamilyHealth(C_Family_Health c_family_health) {
+    public void saveFamilyHealth(C_Family_Health c_family_health,Long userId) {
+        User user = uBasicInfoService.getUserInfoById(userId);
+        c_family_health.setUser(user);
         c_family_health_repository.save(c_family_health);
 
     }

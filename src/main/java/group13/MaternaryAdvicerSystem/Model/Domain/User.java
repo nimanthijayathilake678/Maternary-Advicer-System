@@ -86,7 +86,7 @@ public class User {
 
     @JsonIgnore
     @OneToOne(mappedBy = "user")
-    private C_Housing_And_Workspace housingAndWorkspaces;
+    private C_Housing_And_Workspace housingAndWorkspaces ;
 
     @JsonIgnore
     @OneToOne(mappedBy = "user")
@@ -99,6 +99,5 @@ public class User {
     @JsonIgnore
     @OneToOne(mappedBy = "user")
     private C_Filled_By_Midwife cFilledByMidwife;
-
 
 }

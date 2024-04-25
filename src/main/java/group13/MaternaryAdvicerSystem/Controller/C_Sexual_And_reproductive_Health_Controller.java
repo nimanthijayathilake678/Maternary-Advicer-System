@@ -5,6 +5,7 @@ import group13.MaternaryAdvicerSystem.Model.Domain.C_Sexual_And_Reproductive_Hea
 import group13.MaternaryAdvicerSystem.Model.Domain.User;
 import group13.MaternaryAdvicerSystem.Service.Login.C_Eligible_Family_Account_Service;
 import group13.MaternaryAdvicerSystem.Service.Login.C_Sexual_And_Reproductive_Health_Service;
+import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,9 +21,9 @@ public class C_Sexual_And_reproductive_Health_Controller {
         this.c_sexual_and_reproductive_health_service = c_sexual_and_reproductive_health_service;
     }
 
-    @PostMapping
-    public String saveSexualAndReproductiveDetails(@RequestBody C_Sexual_And_Reproductive_Health sexualAndReprodutiveInfo){
-        c_sexual_and_reproductive_health_service.saveSexualAndReproductiveHealthDetails(sexualAndReprodutiveInfo);
+    @PostMapping("/{userId}")
+    public String saveSexualAndReproductiveDetails(@RequestBody C_Sexual_And_Reproductive_Health sexualAndReprodutiveInfo, @PathVariable Long userId){
+        c_sexual_and_reproductive_health_service.saveSexualAndReproductiveHealthDetails(sexualAndReprodutiveInfo,userId);
         return "Add sexual and reproductive details";
     }
 
@@ -31,14 +32,14 @@ public class C_Sexual_And_reproductive_Health_Controller {
         return c_sexual_and_reproductive_health_service.getAllSexualAndReproductiveHealthDetails();
     }
 
-    @GetMapping("/{id}")
-    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveInfoById(@PathVariable Long id){
-        return  c_sexual_and_reproductive_health_service. getSexualAndReproductiveHealthDetailsById(id);
+    @GetMapping("/{userId}")
+    public C_Sexual_And_Reproductive_Health getSexualAndReproductiveInfoById(@PathVariable Long userId){
+        return  c_sexual_and_reproductive_health_service. getSexualAndReproductiveHealthDetailsById(userId);
     }
 
-    @PutMapping("/{id}")
-    public String updateSexualAndReproductiveInfo(@RequestBody C_Sexual_And_Reproductive_Health updateSexualAndReproductiveDetail, @PathVariable Long id){
-        c_sexual_and_reproductive_health_service.updateSexualAndReproductiveHealthDetails(updateSexualAndReproductiveDetail,id);
+    @PutMapping("/{userId}")
+    public String updateSexualAndReproductiveInfo(@RequestBody C_Sexual_And_Reproductive_Health updateSexualAndReproductiveDetail, @PathVariable Long userId){
+        c_sexual_and_reproductive_health_service.updateSexualAndReproductiveHealthDetails(updateSexualAndReproductiveDetail,userId);
         return "Update Add sexual and reproductive details successfully";
     }
 
