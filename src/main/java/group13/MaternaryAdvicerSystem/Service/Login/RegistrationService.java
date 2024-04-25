@@ -73,6 +73,24 @@ public class RegistrationService {
         moh.setMarriedStatus("yes");
         users.add(moh);
 
+        //Add Vog
+        User vog=new User();
+        vog.setId(92020302020L);
+        vog.setFirstName("vog name");
+        vog.setFullName("vog fullname");
+        vog.setLastName("vog lastname");
+        vog.setPosition(UserRole.VogDoctor);
+        vog.setRegNum("VO001");
+        vog.setUsername("Vog123");
+        vog.setPassword(getEncodedPassword("Vog@123"));
+        vog.setArea("Mathara");
+        vog.setEmail("vog@gmail.com");
+        vog.setGender("Male");
+        vog.setContactNo("0922023922");
+        vog.setMarriedStatus("yes");
+        users.add(vog);
+
+
         //Add Midwife
         User midwife=new User();
         midwife.setId(92020202020L);

@@ -18,7 +18,7 @@ public class M_Clinic_Date_Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Area;
+    private String area;
     private String description;
     private LocalTime starttime;
     private LocalDate date;

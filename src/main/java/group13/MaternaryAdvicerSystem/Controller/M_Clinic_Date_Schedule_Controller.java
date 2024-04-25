@@ -24,7 +24,7 @@ public class M_Clinic_Date_Schedule_Controller {
 
     @GetMapping
     public ResponseEntity<List<M_Clinic_Date_Schedule>> getClinicDate(){
-        return new ResponseEntity<>(mClinicDateScheduleService.getClinicDate(), HttpStatus.FOUND);
+        return new ResponseEntity<>(mClinicDateScheduleService.getClinicDate(), HttpStatus.OK);
     }
     @PostMapping
     public M_Clinic_Date_Schedule addClinicDate(@RequestBody M_Clinic_Date_Schedule m_clinic_date_schedule){
